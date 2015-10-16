@@ -1,0 +1,24 @@
+{
+  "name": "ng2-store-examples",
+  "version": "1.0.0",
+  "description": "Examples of how to use the Angular 2 Data Store",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jhades/ng2-store.git"
+  },
+  "author": "jhadesdev",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jhades/ng2-store/issues"
+  },
+  "homepage": "https://github.com/jhades/ng2-store#readme",
+  "jspm": {
+    "devDependencies": {
+      "typescript": "npm:typescript@^1.6.2"
+    }
+  }
+}
