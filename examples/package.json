@@ -17,6 +17,9 @@
   },
   "homepage": "https://github.com/jhades/ng2-store#readme",
   "jspm": {
+    "dependencies": {
+      "angular2": "npm:angular2@^2.0.0-alpha.44"
+    },
     "devDependencies": {
       "typescript": "npm:typescript@^1.6.2"
     }

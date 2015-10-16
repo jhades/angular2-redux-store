@@ -20,9 +20,7 @@
     "jspm": "^0.16.12"
   },
   "jspm": {
-    "dependencies": {
-      "angular2": "npm:angular2@^2.0.0-alpha.44"
-    },
+    "dependencies": {},
     "devDependencies": {
       "typescript": "npm:typescript@^1.6.2"
     }
