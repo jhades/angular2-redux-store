@@ -15,7 +15,7 @@ import {Footer} from "./Footer";
                 <li ng-repeat="todo in todos | filter:statusFilter track by $index" ng-class="{completed: todo.completed, editing: todo == editedTodo}">
                     <div class="view">
                         <input class="toggle" type="checkbox" ng-model="todo.completed" ng-change="toggleCompleted(todo)">
-                        <label ng-dblclick="editTodo(todo)">{{todo.title}}</label>
+                        <label ng-dblclick="editTodo(todo)">todo.title</label>
                         <button class="destroy" ng-click="removeTodo(todo)"></button>
                     </div>
                     <form ng-submit="saveEdits(todo, 'submit')">
