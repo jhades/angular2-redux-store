@@ -1,15 +1,16 @@
-import {Component} from 'angular2/angular2';
+import {Component,Input, NgFor} from 'angular2/angular2';
 import {Footer} from "./Footer";
-
+import {Todo} from "./Todo";
+import {List} from 'immutable';
 
 
 @Component({
     selector: 'todo-list',
-    directives: [Footer],
+    directives: [Footer, NgFor],
     template: `
 
-        <section id="main" ng-show="todos.length">
-            <input id="toggle-all" type="checkbox" ng-model="allChecked" ng-click="markAll(allChecked)">
+        <section id="main" ng-show="todos.size > 0">
+            <input id="toggle-all" type="checkbox" (click)="markAllCompleted()">
             <label for="toggle-all">Mark all as complete</label>
             <ul id="todo-list">
                 <li ng-repeat="todo in todos | filter:statusFilter track by $index" ng-class="{completed: todo.completed, editing: todo == editedTodo}">
@@ -29,5 +30,11 @@ import {Footer} from "./Footer";
     `
 })
 export class TodoList {
+
+    @Input() todos: List<Todo>;
+
+    markAllCompleted() {
+
+    }
 
 }

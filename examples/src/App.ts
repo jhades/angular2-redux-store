@@ -3,6 +3,8 @@ import  'reflect-metadata';
 import {Component, bootstrap} from 'angular2/angular2';
 import {Header} from './Header';
 import {TodoList} from './TodoList';
+import {List} from 'immutable';
+import {Todo} from "./Todo";
 
 @Component({
     selector: 'app',
@@ -11,9 +13,9 @@ import {TodoList} from './TodoList';
         <div>
             <section id="todoapp">
 
-                <todo-header></todo-header>
+                <todo-header (todo)="onAddTodo($event)"></todo-header>
 
-                <todo-list></todo-list>
+                <todo-list [todos]="todos"></todo-list>
 
             </section>
             <footer id="info">
@@ -23,6 +25,13 @@ import {TodoList} from './TodoList';
     `
 })
 export class App {
+
+    todos: List<Todo> = List([new Todo('task 1'), new Todo('task 2')]);
+
+
+    onAddTodo(description) {
+        console.log(description);
+    }
 
 
 }
