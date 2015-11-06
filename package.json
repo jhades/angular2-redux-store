@@ -1,27 +1,20 @@
 {
   "name": "ng2-store",
   "version": "1.0.0",
-  "description": "Angular 2 Application Data Store",
-  "main": "ng-store.js",
+  "description": "An easy to use Data Store for Angular 2",
+  "main": "ng2-store.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/jhades/ng2-store.git"
-  },
-  "author": "jhadesdev",
+  "author": "",
   "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/jhades/ng2-store/issues"
-  },
-  "homepage": "https://github.com/jhades/ng2-store#readme",
-  "dependencies": {
-    "jspm": "^0.16.12"
-  },
   "jspm": {
-    "dependencies": {},
+    "directories": {
+      "baseURL": "examples"
+    },
     "devDependencies": {
+      "babel": "npm:babel-core@^5.8.24",
+      "babel-runtime": "npm:babel-runtime@^5.8.24",
+      "core-js": "npm:core-js@^1.1.4",
       "typescript": "npm:typescript@^1.6.2"
     }
   }
