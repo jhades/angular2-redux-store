@@ -9,6 +9,7 @@ System.config({
 
   map: {
     "angular2": "npm:angular2@2.0.0-alpha.45",
+    "reflect-metadata": "npm:reflect-metadata@0.1.2",
     "tastejs/todomvc-common": "github:tastejs/todomvc-common@1.0.2",
     "typescript": "npm:typescript@1.6.2",
     "github:jspm/nodelibs-assert@0.1.0": {

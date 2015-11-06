@@ -3,13 +3,14 @@
   "version": "1.0.0",
   "description": "An easy to use Data Store for Angular 2",
   "main": "ng2-store.js",
-  "scripts": {
-  },
+  "scripts": {},
   "author": "",
   "license": "MIT",
   "jspm": {
     "directories": {
       "baseURL": "examples"
+    },
+    "dependencies": {
     },
     "devDependencies": {
       "babel": "npm:babel-core@^5.8.24",
