@@ -5,10 +5,11 @@ import {Header} from './Header';
 import {TodoList} from './TodoList';
 import {List} from 'immutable';
 import {Todo} from "./Todo";
+import {Footer} from "./Footer";
 
 @Component({
     selector: 'app',
-    directives: [Header, TodoList],
+    directives: [Header, TodoList, Footer],
     template: `
         <div>
             <section id="todoapp">
@@ -16,6 +17,8 @@ import {Todo} from "./Todo";
                 <todo-header (todo)="onAddTodo($event)"></todo-header>
 
                 <todo-list [todos]="todos"></todo-list>
+
+                <todo-footer [hidden]="todos.size === 0"></todo-footer>
 
             </section>
             <footer id="info">

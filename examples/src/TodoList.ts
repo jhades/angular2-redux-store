@@ -1,5 +1,4 @@
 import {Component,Input, NgFor, NgClass} from 'angular2/angular2';
-import {Footer} from "./Footer";
 import {Todo} from "./Todo";
 import {List} from 'immutable';
 import {Todo} from "./Todo";
@@ -7,7 +6,7 @@ import {Todo} from "./Todo";
 
 @Component({
     selector: 'todo-list',
-    directives: [Footer, NgFor, NgClass],
+    directives: [NgFor, NgClass],
     template: `
 
         <section id="main" [hidden]="todos.size === 0">
@@ -26,8 +25,6 @@ import {Todo} from "./Todo";
                 </li>
             </ul>
         </section>
-
-        <todo-footer [hidden]="todos.size === 0"></todo-footer>
     `
 })
 export class TodoList {
