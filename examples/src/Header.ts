@@ -7,7 +7,7 @@ import {Component, FORM_DIRECTIVES, Output,EventEmitter} from 'angular2/angular2
     template: `
         <header id="header">
             <h1>todos</h1>
-            <form id="todo-form" (ng-submit)="addTodo(input.value)">
+            <form id="todo-form" (ng-submit)="addTodo(input.value)" autocomplete="off">
                 <input id="new-todo" placeholder="What needs to be done?" #input>
             </form>
         </header>

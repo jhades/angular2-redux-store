@@ -9,18 +9,18 @@
   },
   "author": "",
   "license": "MIT",
+  "devDependencies": {
+    "http-server": "0.8.5",
+    "typescript": "^1.6.2"
+  },
+  "dependencies": {
+    "angular2": "^2.0.0-alpha.45"
+  },
   "jspm": {
     "dependencies": {
-      "angular2": "npm:angular2@2.0.0-alpha.45",
       "immutable": "npm:immutable@^3.7.5",
-      "reflect-metadata": "npm:reflect-metadata@^0.1.2",
-      "tastejs/todomvc-common": "github:tastejs/todomvc-common@1.0.2"
+      "reflect-metadata": "npm:reflect-metadata@^0.1.2"
     },
-    "devDependencies": {
-      "typescript": "npm:typescript@1.6.2"
-    }
-  },
-  "devDependencies": {
-    "http-server": "0.8.5"
+    "devDependencies": {}
   }
 }

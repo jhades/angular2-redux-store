@@ -29,11 +29,11 @@ import {Footer} from "./Footer";
 })
 export class App {
 
-    todos: List<Todo> = List([new Todo('task 1'), new Todo('task 2')]);
+    todos: List<Todo> = List([new Todo(1, 'task 1'), new Todo(2, 'task 2')]);
 
 
     onAddTodo(description) {
-        console.log(description);
+        this.todos = this.todos.push(new Todo(this.todos.size + 1, description));
     }
 
 
