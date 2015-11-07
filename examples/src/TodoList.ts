@@ -27,7 +27,7 @@ import {Todo} from "./Todo";
             </ul>
         </section>
 
-        <todo-footer></todo-footer>
+        <todo-footer [hidden]="todos.size === 0"></todo-footer>
     `
 })
 export class TodoList {
