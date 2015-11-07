@@ -6,16 +6,16 @@ export class Todo {
 
     _data: Map;
 
-    constructor(description:string, status: boolean = false) {
-        this._data = Map({description, status});
+    constructor(description:string, completed: boolean = false) {
+        this._data = Map({description, completed});
     }
 
     get description() {
         return this._data.get('description');
     }
 
-    get status() {
-        return this._data.get('status');
+    get completed() {
+        return this._data.get('completed');
     }
 
 }

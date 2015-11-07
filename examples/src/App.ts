@@ -19,7 +19,7 @@ import {Todo} from "./Todo";
 
             </section>
             <footer id="info">
-                <p>Double-click to edit a todo</p>
+                <p>Click to edit a todo</p>
             </footer>
         </div>
     `
