@@ -2,21 +2,14 @@
   "name": "ng2-store",
   "version": "1.0.0",
   "description": "An easy to use Data Store for Angular 2",
-  "main": "ng2-store.js",
-  "scripts": {},
+  "main": "lib/index.js",
+  "scripts": {
+    "build": "rm -rf lib && mkdir lib && tsc",
+    "watch": "rm -rf lib && mkdir lib && tsc -w"
+  },
   "author": "",
   "license": "MIT",
-  "jspm": {
-    "directories": {
-      "baseURL": "examples"
-    },
-    "dependencies": {
-    },
-    "devDependencies": {
-      "babel": "npm:babel-core@^5.8.24",
-      "babel-runtime": "npm:babel-runtime@^5.8.24",
-      "core-js": "npm:core-js@^1.1.4",
-      "typescript": "npm:typescript@^1.6.2"
-    }
+  "devDependencies": {
+    "typescript": "^1.6.2"
   }
 }

@@ -1,0 +1,19 @@
+{
+  "version": "1.6.2",
+  "compilerOptions": {
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "target": "es5",
+    "module": "system",
+    "moduleResolution": "node",
+    "removeComments": true,
+    "sourceMap": true,
+    "outDir": "lib"
+  },
+  "exclude": [
+    "node_modules",
+    "jspm_packages",
+    "lib",
+    "examples"
+  ]
+}
