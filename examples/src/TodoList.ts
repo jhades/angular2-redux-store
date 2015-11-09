@@ -1,4 +1,4 @@
-import {Component,Input, NgFor, NgClass} from 'angular2/angular2';
+import {Component,Input, NgFor, NgClass,Output, EventEmitter} from 'angular2/angular2';
 import {Todo} from "./Todo";
 import {List} from 'immutable';
 import {Todo} from "./Todo";
@@ -16,7 +16,7 @@ import {Todo} from "./Todo";
                 <li *ng-for="#todo of todos;" [ng-class]="{completed: todo.completed}">
                     <div class="view">
                         <input class="toggle" type="checkbox" (change)="completeTodo(todo)">
-                        <label (click)="editTodo(todo)">{{todo.description}}</label>
+                        <label (click)="beginEditTodo(todo)">{{todo.description}}</label>
                         <button class="destroy" (click)="deleteTodo(todo)"></button>
                     </div>
                     <form (ng-submit)="saveEditedTodo(todo)">
@@ -30,17 +30,19 @@ import {Todo} from "./Todo";
 export class TodoList {
 
     @Input() todos: List<Todo>;
+    @Output  allCompleted = new EventEmitter();
+    @Output  deleteTodo = new EventEmitter();
 
     markAllCompleted() {
-        console.log("mark all completed...");
+        this.allCompleted.next(null);
     }
 
     completeTodo(todo: Todo) {
         console.log('complete todo');
     }
 
-    editTodo(todo:Todo) {
-        console.log('edit todo');
+    beginEditTodo(todo:Todo) {
+        console.log('begin edit todo');
     }
 
     saveEditedTodo(todo:Todo) {

@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "preinstall": "jspm install",
     "server": "http-server -c-1 .",
     "build": "rm -rf build && mkdir build && tsc -w"
   },

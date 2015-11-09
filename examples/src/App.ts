@@ -3,9 +3,9 @@ import  'reflect-metadata';
 import {Component, bootstrap} from 'angular2/angular2';
 import {Header} from './Header';
 import {TodoList} from './TodoList';
-import {List} from 'immutable';
 import {Todo} from "./Todo";
 import {Footer} from "./Footer";
+import {TodoStore} from "./TodoStore";
 
 @Component({
     selector: 'app',
@@ -16,9 +16,9 @@ import {Footer} from "./Footer";
 
                 <todo-header (todo)="onAddTodo($event)"></todo-header>
 
-                <todo-list [todos]="todos"></todo-list>
+                <todo-list [todos]="store.state" (all-completed)="onAllCompleted()"></todo-list>
 
-                <todo-footer [hidden]="todos.size === 0"></todo-footer>
+                <todo-footer [hidden]="store.state.size === 0"></todo-footer>
 
             </section>
             <footer id="info">
@@ -29,14 +29,18 @@ import {Footer} from "./Footer";
 })
 export class App {
 
-    todos: List<Todo> = List([new Todo(1, 'task 1'), new Todo(2, 'task 2')]);
-
-
-    onAddTodo(description) {
-        this.todos = this.todos.push(new Todo(this.todos.size + 1, description));
+    constructor(private store: TodoStore) {
+        debugger;
     }
 
+    onAddTodo(description) {
+        this.store.addTodo(description);
+    }
+
+    onAllCompleted() {
+        this.store.completeAll();
+    }
 
 }
 
-bootstrap(App);
+bootstrap(App, [TodoStore]);
