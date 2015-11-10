@@ -6,7 +6,7 @@ import {Header} from './Header';
 import {TodoList} from './TodoList';
 import {Todo} from "./Todo";
 import {Footer} from "./Footer";
-import {TodoStore} from "./TodoStore";
+import {TodoStore} from "./store/TodoStore";
 import {AddTodoAction} from "./store/AddTodoAction";
 
 @Component({

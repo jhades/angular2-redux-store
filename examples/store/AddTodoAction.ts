@@ -1,5 +1,5 @@
 
-import {TodoStore} from "../TodoStore";
+import {TodoStore} from "./TodoStore";
 import  {Injectable} from 'angular2/angular2';
 import {Todo} from "../Todo";
 import {Ng2StoreAction} from "ng2-store";
