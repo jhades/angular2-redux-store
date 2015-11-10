@@ -3,7 +3,7 @@ import {Map} from 'immutable';
 
 export class Todo {
 
-    _data: Map;
+    _data: Map<string,any>;
 
     constructor(id: number, description:string, completed: boolean = false) {
         this._data = Map({id, description, completed});

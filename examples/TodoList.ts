@@ -1,7 +1,7 @@
 import {Component,Input, NgFor, NgClass,Output, EventEmitter} from 'angular2/angular2';
 import {Todo} from "./Todo";
 import {List} from 'immutable';
-import {Todo} from "./Todo";
+
 
 
 @Component({
@@ -15,12 +15,12 @@ import {Todo} from "./Todo";
             <ul id="todo-list">
                 <li *ng-for="#todo of todos;" [ng-class]="{completed: todo.completed}">
                     <div class="view">
-                        <input class="toggle" type="checkbox" (change)="completeTodo(todo)">
-                        <label (click)="beginEditTodo(todo)">{{todo.description}}</label>
-                        <button class="destroy" (click)="deleteTodo(todo)"></button>
+                        <input class="toggle" type="checkbox" (change)="complete(todo)">
+                        <label (click)="beginEdit(todo)">{{todo.description}}</label>
+                        <button class="destroy" (click)="delete(todo)"></button>
                     </div>
                     <form (ng-submit)="saveEditedTodo(todo)">
-                        <input class="edit" (blur)="saveEditedTodo(todo)">
+                        <input class="edit" (blur)="saveEdited(todo)">
                     </form>
                 </li>
             </ul>
@@ -30,26 +30,26 @@ import {Todo} from "./Todo";
 export class TodoList {
 
     @Input() todos: List<Todo>;
-    @Output  allCompleted = new EventEmitter();
-    @Output  deleteTodo = new EventEmitter();
+    @Output()  allCompleted = new EventEmitter();
+    @Output()  deleteTodo = new EventEmitter();
 
     markAllCompleted() {
         this.allCompleted.next(null);
     }
 
-    completeTodo(todo: Todo) {
+    complete(todo: Todo) {
         console.log('complete todo');
     }
 
-    beginEditTodo(todo:Todo) {
+    beginEdit(todo:Todo) {
         console.log('begin edit todo');
     }
 
-    saveEditedTodo(todo:Todo) {
+    saveEdited(todo:Todo) {
         console.log("save edited Todo");
     }
 
-    deleteTodo(todo:Todo) {
+    delete(todo:Todo) {
         console.log("delete todo");
     }
 
