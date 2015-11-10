@@ -3,7 +3,7 @@ import  {Injectable} from 'angular2/angular2';
 import {List} from 'immutable';
 import {Todo} from "./Todo";
 import {Ng2Store} from 'ng2-store';
-import {AddTodoAction} from "./actions/AddTodoAction";
+import {AddTodoAction} from "./store/AddTodoAction";
 
 @Injectable()
 export class TodoStore extends Ng2Store<List<Todo>> {
