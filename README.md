@@ -16,4 +16,4 @@ Run the commands from either Cygwin or the [git bash shell](https://git-scm.com/
 
 ## Having difficulties?
 
-It would be great to open an issue, even if its just a question. If running into issues, can you copy the whole error message and add the node and npm version and i'll follow it up. Thanks.
+It would be great to open an issue, even if its simply a question. If running into issues, can you copy the whole error message and add the node and npm version and i'll follow it up. Thanks.
