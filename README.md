@@ -8,6 +8,10 @@ To build ng2-store and the sample app locally, first do:
 This should install jspm, angular2 and immutable.js. Note that these are development-only dependencies, needed by the sample app. The library itself has no dependencies. 
  
  
+# TODO
+ 
+ typings
+ 
 
 ### If building the library and examples on Windows
 
