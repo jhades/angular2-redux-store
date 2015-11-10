@@ -7,6 +7,7 @@ import {TodoList} from './TodoList';
 import {Todo} from "./Todo";
 import {Footer} from "./Footer";
 import {TodoStore} from "./TodoStore";
+import {AddTodoAction} from "./actions/AddTodoAction";
 
 @Component({
     selector: 'app',
