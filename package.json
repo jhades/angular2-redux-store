@@ -4,12 +4,26 @@
   "description": "An easy to use Data Store for Angular 2",
   "main": "lib/index.js",
   "scripts": {
-    "build": "rm -rf lib && mkdir lib && tsc",
-    "watch": "rm -rf lib && mkdir lib && tsc -w"
+    "preinstall": "jspm install",
+    "watch": "rm -rf build && mkdir build && tsc -w",
+    "start": "http-server -c-1 ."
   },
-  "author": "",
+  "author": "jhades.dev@gmail.com",
   "license": "MIT",
+  "dependencies": {},
   "devDependencies": {
-    "typescript": "^1.6.2"
+    "typescript": "^1.6.2",
+    "http-server": "0.8.5",
+    "angular2": "^2.0.0-alpha.45"
+  },
+  "jspm": {
+    "dependencies": {},
+    "devDependencies": {
+      "babel": "npm:babel-core@^5.8.24",
+      "babel-runtime": "npm:babel-runtime@^5.8.24",
+      "core-js": "npm:core-js@^1.1.4",
+      "immutable": "npm:immutable@^3.7.5",
+      "reflect-metadata": "npm:reflect-metadata@^0.1.2"
+    }
   }
 }

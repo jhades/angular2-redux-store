@@ -30,7 +30,7 @@ import {TodoStore} from "./TodoStore";
 export class App {
 
     constructor(private store: TodoStore) {
-        debugger;
+
     }
 
     onAddTodo(description) {
