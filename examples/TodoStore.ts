@@ -5,7 +5,7 @@ import {Todo} from "./Todo";
 import {Ng2Store} from 'ng2-store';
 
 @Injectable()
-export class TodoStore extends Ng2Store {
+export class TodoStore extends Ng2Store<List<Todo>> {
 
     todos: List<Todo> = List([new Todo(1, 'task 1'), new Todo(2, 'task 2')]);
 
@@ -17,7 +17,7 @@ export class TodoStore extends Ng2Store {
 
     }
     
-    get state() {
+    getState(): List<Todo> {
         return this.todos;
     }
 
