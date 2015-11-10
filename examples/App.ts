@@ -36,11 +36,11 @@ export class App {
     }
 
     onAddTodo(description) {
-        this.store.addTodo(description);
+        this.store.dispatch(AddTodoAction.ACTION, {description});
     }
 
     onAllCompleted() {
-        this.store.completeAll();
+        //TODO
     }
 
 }

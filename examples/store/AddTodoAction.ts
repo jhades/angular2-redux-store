@@ -5,19 +5,16 @@ import {Todo} from "../Todo";
 import {Ng2StoreAction} from "ng2-store";
 
 @Injectable()
-export class AddTodoAction implements Ng2StoreAction {
+export class AddTodoAction {
 
     static ACTION = "addTodo";
 
-    constructor(private store: TodoStore) {
+    constructor(store: TodoStore) {
 
-    }
-
-    register() {
-        this.store.registerAction(AddTodoAction.ACTION, ({description}) => {
-            this.store.todos = this.store.todos.push(new Todo(this.store.todos.size + 1, description));
+        store.register(AddTodoAction.ACTION, ({description}) => {
+            store.todos = store.todos.push(new Todo(store.todos.size + 1, description));
         });
-    }
 
+    }
 
 }
