@@ -6,13 +6,11 @@ export abstract class Ng2Store<S> {
     abstract getState(): S;
 
     register(actionName: string, callback: Function) {
-        debugger;
         this.actions[actionName] = callback;
     }
 
     dispatch(actionName: string, args: Object)  {
-        debugger;
-        this.actions[actionName](args);
+        this.actions[actionName].call(this, args);
     }
 
     undo() {

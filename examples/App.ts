@@ -7,7 +7,8 @@ import {TodoList} from './TodoList';
 import {Todo} from "./Todo";
 import {Footer} from "./Footer";
 import {TodoStore} from "./store/TodoStore";
-import {AddTodoAction} from "./store/AddTodoAction";
+import * as actions from './store/actions';
+
 
 @Component({
     selector: 'app',
@@ -36,12 +37,9 @@ export class App {
     }
 
     onAddTodo(description) {
-        this.store.dispatch(AddTodoAction.ACTION, {description});
+        this.store.dispatch(actions.ADD_TODO, {description});
     }
 
-    onAllCompleted() {
-        //TODO
-    }
 
 }
 
