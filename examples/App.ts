@@ -19,9 +19,9 @@ import * as actions from './store/actions';
 
                 <todo-header (todo)="onAddTodo($event)"></todo-header>
 
-                <todo-list [todos]="store.getState()" (all-completed)="onAllCompleted()"></todo-list>
+                <todo-list [todos]="store.state" (all-completed)="onAllCompleted()"></todo-list>
 
-                <todo-footer [hidden]="store.getState().size === 0"></todo-footer>
+                <todo-footer [hidden]="store.state.size === 0"></todo-footer>
 
             </section>
             <footer id="info">

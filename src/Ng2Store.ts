@@ -1,16 +1,30 @@
+import {Ng2StoreAction} from "./Ng2StoreAction";
+
 
 export abstract class Ng2Store<S> {
 
-    actions: {[actionName: string]: Function} = {};
+    _state: S;
 
-    abstract getState(): S;
+    actions: {[actionName: string]: Ng2StoreAction<S> } = {};
 
-    register(actionName: string, callback: Function) {
-        this.actions[actionName] = callback;
+    constructor(initialState: S) {
+        this._state = initialState;
+    }
+
+    get state(): S {
+        return this._state;
+    };
+
+    register(actionName: string, storeActionClass: Ng2StoreAction<S> ) {
+        this.actions[actionName] = new (<Function>storeActionClass);
     }
 
     dispatch(actionName: string, args: Object)  {
-        this.actions[actionName].call(this, args);
+        var newState = this.actions[actionName].execute(this._state, args);
+
+        if (newState) {
+            this._state = newState;
+        }
     }
 
     undo() {

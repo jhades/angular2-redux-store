@@ -1,20 +1,12 @@
 
-import {TodoStore} from "./TodoStore";
-import  {Injectable} from 'angular2/angular2';
 import {Todo} from "../Todo";
 import {Ng2StoreAction} from "ng2-store";
+import {List} from 'immutable';
 
-@Injectable()
-export class AddTodoAction {
+export class AddTodoAction implements Ng2StoreAction<List<Todo>> {
 
-    static ACTION = "addTodo";
-
-    constructor(store: TodoStore) {
-
-        store.register(AddTodoAction.ACTION, ({description}) => {
-            store.todos = store.todos.push(new Todo(store.todos.size + 1, description));
-        });
-
+    execute( state:List<Todo>, {description} )  {
+        return state.push(new Todo(Math.random(), description));
     }
 
 }
