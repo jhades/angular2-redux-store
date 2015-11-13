@@ -20,6 +20,9 @@ export abstract class Ng2Store<S> {
     }
 
     dispatch(actionName: string, args: Object)  {
+
+        //TODO check if dispatch is ongoing
+
         var newState = this.actions[actionName].execute(this._state, args);
 
         if (newState) {
