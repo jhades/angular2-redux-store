@@ -6,7 +6,7 @@ import {Ng2Store} from 'ng2-store';
 import * as actions from './actions';
 import {AddTodoAction} from './AddTodoAction';
 import {ToggleAllAction} from "./ToggleAllAction";
-import {CompleteTodoAction} from "./CompleteTodoAction";
+import {ToggleTodoAction} from "./ToggleTodoAction";
 
 
 @Injectable()
@@ -17,7 +17,7 @@ export abstract class TodoStore extends Ng2Store<List<Todo>> {
 
         this.register(actions.ADD_TODO, AddTodoAction);
         this.register(actions.TOGGLE_ALL, ToggleAllAction);
-        this.register(actions.COMPLETE_TODO, CompleteTodoAction);
+        this.register(actions.TOGGLE_TODO, ToggleTodoAction);
     }
 
 }

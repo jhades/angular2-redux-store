@@ -16,7 +16,7 @@ import * as actions from './store/actions';
             <ul id="todo-list">
                 <li *ng-for="#todo of todos;" [ng-class]="{completed: todo.completed}">
                     <div class="view">
-                        <input class="toggle" type="checkbox" (change)="complete(todo)">
+                        <input class="toggle" type="checkbox" (change)="onToggleTodo(todo)">
                         <label (click)="beginEdit(todo)">{{todo.description}}</label>
                         <button class="destroy" (click)="delete(todo)"></button>
                     </div>
@@ -42,8 +42,8 @@ export class TodoList {
         this.toggleAll.next(null);
     }
 
-    complete(todo: Todo) {
-        this.store.dispatch(actions.COMPLETE_TODO, todo);
+    onToggleTodo(todo: Todo) {
+        this.store.dispatch(actions.TOGGLE_TODO, todo);
     }
 
     beginEdit(todo:Todo) {
