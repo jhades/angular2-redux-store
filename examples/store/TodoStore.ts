@@ -5,7 +5,7 @@ import {Todo} from "./../Todo";
 import {Ng2Store} from 'ng2-store';
 import * as actions from './actions';
 import {AddTodoAction} from './AddTodoAction';
-import {ToggleAllAction} from "./CompleteAllAction";
+import {ToggleAllAction} from "./ToggleAllAction";
 
 
 @Injectable()
