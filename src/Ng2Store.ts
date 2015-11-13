@@ -19,7 +19,7 @@ export abstract class Ng2Store<S> {
         this.actions[actionName] = new (<Function>storeActionClass);
     }
 
-    dispatch(actionName: string, args: Object)  {
+    dispatch(actionName: string, args: Object = {})  {
 
         //TODO check if dispatch is ongoing
 

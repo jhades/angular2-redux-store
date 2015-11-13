@@ -40,6 +40,10 @@ export class App {
         this.store.dispatch(actions.ADD_TODO, {description});
     }
 
+    onAllCompleted() {
+        this.store.dispatch(actions.COMPLETE_ALL);
+    }
+
 
 }
 
