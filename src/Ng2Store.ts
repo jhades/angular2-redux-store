@@ -15,13 +15,30 @@ export abstract class Ng2Store<S> {
         return this._state;
     };
 
-    register(actionName: string, storeActionClass: Ng2StoreAction<S> ) {
+    protected register(actionName: string, storeActionClass: Ng2StoreAction<S> ) {
+
+        //TODO basic API validation
+
+        //TODO check if action is already registered
+
         this.actions[actionName] = new (<Function>storeActionClass);
+    }
+
+    protected registerAll() {
+
+        //TODO basic API validation
+
+        //TODO alternate register function based on a list of arrays with key pair tuples
+
     }
 
     dispatch(actionName: string, args: Object = {})  {
 
+        //TODO basic API validation
+
         //TODO check if dispatch is ongoing
+
+        //TODO check if action is registered
 
         var newState = this.actions[actionName].execute(this._state, args);
 
@@ -32,10 +49,14 @@ export abstract class Ng2Store<S> {
 
     undo() {
         //TODO
+
+        //TODO check if dispatch is ongoing
     }
 
     redo() {
         //TODO
+
+        //TODO check if dispatch is ongoing
     }
 
 }

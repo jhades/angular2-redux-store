@@ -1,7 +1,8 @@
 import {Component,Input, NgFor, NgClass,Output, EventEmitter} from 'angular2/angular2';
 import {Todo} from "./Todo";
 import {List} from 'immutable';
-
+import {TodoStore} from "./store/TodoStore";
+import * as actions from './store/actions';
 
 
 @Component({
@@ -33,12 +34,16 @@ export class TodoList {
     @Output()  toggleAll = new EventEmitter();
     @Output()  deleteTodo = new EventEmitter();
 
+    constructor(private store: TodoStore) {
+
+    }
+
     onToggleAll() {
         this.toggleAll.next(null);
     }
 
     complete(todo: Todo) {
-        console.log('complete todo');
+        this.store.dispatch(actions.COMPLETE_TODO, todo);
     }
 
     beginEdit(todo:Todo) {
