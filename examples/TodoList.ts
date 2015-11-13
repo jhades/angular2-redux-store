@@ -10,7 +10,7 @@ import {List} from 'immutable';
     template: `
 
         <section id="main" [hidden]="todos.size === 0">
-            <input id="toggle-all" type="checkbox" (click)="markAllCompleted()">
+            <input id="toggle-all" type="checkbox" (click)="onToggleAll()">
             <label for="toggle-all">Mark all as complete</label>
             <ul id="todo-list">
                 <li *ng-for="#todo of todos;" [ng-class]="{completed: todo.completed}">
@@ -30,11 +30,11 @@ import {List} from 'immutable';
 export class TodoList {
 
     @Input() todos: List<Todo>;
-    @Output()  allCompleted = new EventEmitter();
+    @Output()  toggleAll = new EventEmitter();
     @Output()  deleteTodo = new EventEmitter();
 
-    markAllCompleted() {
-        this.allCompleted.next(null);
+    onToggleAll() {
+        this.toggleAll.next(null);
     }
 
     complete(todo: Todo) {

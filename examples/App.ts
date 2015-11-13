@@ -19,7 +19,7 @@ import * as actions from './store/actions';
 
                 <todo-header (todo)="onAddTodo($event)"></todo-header>
 
-                <todo-list [todos]="store.state" (all-completed)="onAllCompleted()"></todo-list>
+                <todo-list [todos]="store.state" (toggle-all)="onToggleAll()"></todo-list>
 
                 <todo-footer [hidden]="store.state.size === 0"></todo-footer>
 
@@ -40,8 +40,8 @@ export class App {
         this.store.dispatch(actions.ADD_TODO, {description});
     }
 
-    onAllCompleted() {
-        this.store.dispatch(actions.COMPLETE_ALL);
+    onToggleAll() {
+        this.store.dispatch(actions.TOGGLE_ALL);
     }
 
 
