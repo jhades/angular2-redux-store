@@ -2,7 +2,7 @@
 
 import {Map} from 'immutable';
 
-export class ImmutableModel {
+export class Ng2StoreModel {
 
     _data: Map;
 
