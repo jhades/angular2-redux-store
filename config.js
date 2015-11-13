@@ -9,16 +9,15 @@ System.config({
   },
   paths: {
     "github:*": "jspm_packages/github/*",
-    "npm:*": "jspm_packages/npm/*",
-    "build:*": "build/*"
+    "npm:*": "jspm_packages/npm/*"
   },
 
   map: {
-    "ng2-store":"build:ng2-store",
     "babel": "npm:babel-core@5.8.33",
     "babel-runtime": "npm:babel-runtime@5.8.29",
     "core-js": "npm:core-js@1.2.6",
     "immutable": "npm:immutable@3.7.5",
+    "ng2-store": "build/ng2-store",
     "reflect-metadata": "npm:reflect-metadata@0.1.2",
     "github:jspm/nodelibs-assert@0.1.0": {
       "assert": "npm:assert@1.3.0"
