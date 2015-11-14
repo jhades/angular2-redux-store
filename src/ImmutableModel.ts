@@ -16,9 +16,7 @@ export class Ng2StoreModel<M extends Ng2StoreModel> {
         //TODO basic validation
 
         model._data.keySeq().toArray().forEach(property => {
-            if (property) {
-                model.__defineGetter__(property, () => model._data.get(property));
-            }
+            model.__defineGetter__(property, () => model._data.get(property));
         });
     }
 
