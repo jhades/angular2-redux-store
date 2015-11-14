@@ -13,6 +13,7 @@ export class Ng2StoreModel<M extends Ng2StoreModel> {
 
     static initModel(model: M) {
 
+        //TODO basic validation
 
         model._data.keySeq().toArray().forEach(property => {
             if (property) {
@@ -22,6 +23,9 @@ export class Ng2StoreModel<M extends Ng2StoreModel> {
     }
 
     static from(original: M, differences: Object): M {
+
+        //TODO basic validation
+
         let copiedModel = <M> {
             _data: original._data.merge(differences)
         };
