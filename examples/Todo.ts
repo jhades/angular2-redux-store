@@ -1,7 +1,7 @@
 
 import {Ng2StoreModel} from 'ng2-store';
 
-export class Todo extends Ng2StoreModel {
+export class Todo extends Ng2StoreModel<Todo> {
 
     id:number;
     description:string;
