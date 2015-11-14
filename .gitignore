@@ -3,3 +3,4 @@ node_modules
 jspm_packages
 build
 dist
+.idea
