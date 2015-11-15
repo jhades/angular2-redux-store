@@ -10,12 +10,12 @@ This should install jspm, angular2 and immutable.js.
  
 # TODO
  
- - typings
- - save on success
+ - example with Http
  - middleware mechanism
  - logging middleware
  - undo /redo middleware?
- 
+ - typings
+
 
 ### If building the library and examples on Windows
 
