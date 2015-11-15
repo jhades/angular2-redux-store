@@ -25,7 +25,7 @@ import * as actions from './store/actions';
 
             </section>
             <footer id="info">
-                <p>Click to edit a todo</p>
+                <p>Add, Remove and Complete TODOs</p>
             </footer>
         </div>
     `
