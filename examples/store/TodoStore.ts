@@ -5,8 +5,8 @@ import {Todo} from "./../Todo";
 import {Ng2Store} from 'ng2-store';
 import * as actions from './actions';
 import {AddTodoAction} from './actions/AddTodoAction';
-import {ToggleAllAction} from "./ToggleAllAction";
-import {ToggleTodoAction} from "./ToggleTodoAction";
+import {ToggleAllAction} from "./actions/ToggleAllAction";
+import {ToggleTodoAction} from "./actions/ToggleTodoAction";
 import {DeleteTodoAction} from "./actions/DeleteTodoAction";
 import {ClearAllAction} from "./actions/ClearAllAction";
 
