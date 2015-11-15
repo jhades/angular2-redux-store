@@ -55,9 +55,7 @@ export class TodoList {
     }
 
     delete(todo:Todo) {
-        console.log("delete todo");
+        this.store.dispatch(actions.DELETE_TODO, todo);
     }
-
-
 
 }
