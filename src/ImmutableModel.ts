@@ -15,9 +15,14 @@ export class Ng2StoreModel<M extends Ng2StoreModel> {
 
         //TODO basic validation
 
-        model._data.keySeq().toArray().forEach(property => {
-            model.__defineGetter__(property, () => model._data.get(property));
+        let keys: string[] = <string[]>model._data.keySeq().toArray();
+
+        keys.forEach( (property) => {
+                Object.defineProperty(model, property, {
+                    get: () => model._data.get(property)
+                });
         });
+
     }
 
     static from(original: M, differences: Object): M {
