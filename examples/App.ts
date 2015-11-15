@@ -8,6 +8,11 @@ import {Todo} from "./Todo";
 import {Footer} from "./Footer";
 import {TodoStore} from "./store/TodoStore";
 import * as actions from './store/actions';
+import {AddTodoAction} from "./store/actions/AddTodoAction";
+import {ToggleAllAction} from "./store/actions/ToggleAllAction";
+import {ToggleTodoAction} from "./store/actions/ToggleTodoAction";
+import {DeleteTodoAction} from "./store/actions/DeleteTodoAction";
+import {ClearAllAction} from "./store/actions/ClearAllAction";
 
 
 @Component({
@@ -38,6 +43,11 @@ export class App {
 
     onAddTodo(description) {
         this.store.dispatch(actions.ADD_TODO, {description});
+            // TODO
+            /*.subscribe(
+                res => console.log('TODO added successfully'),
+                error => console.log(`Error occurred: ${error} `)
+            ); */
     }
 
     onToggleAll() {
@@ -51,4 +61,11 @@ export class App {
 
 }
 
-bootstrap(App, [TodoStore]);
+bootstrap(App, [
+    TodoStore,
+    AddTodoAction,
+    ToggleAllAction,
+    ToggleTodoAction,
+    DeleteTodoAction,
+    ClearAllAction
+]);

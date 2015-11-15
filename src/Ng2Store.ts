@@ -1,5 +1,5 @@
 import {Ng2StoreAction} from "./Ng2StoreAction";
-
+import {Injector} from 'angular2/angular2';
 
 export abstract class Ng2Store<S> {
 
@@ -12,7 +12,8 @@ export abstract class Ng2Store<S> {
     currentActionName: string;
     currentAction: Ng2StoreAction<S> = null;
 
-    constructor(initialState: S) {
+
+    constructor(private injector: Injector, initialState: S) {
         this._state = initialState;
     }
 
@@ -22,11 +23,11 @@ export abstract class Ng2Store<S> {
 
     protected register(actionName: string, storeActionClass: Ng2StoreAction<S> ) {
 
-        //TODO basic API validation
+        this.check(actionName, 'The dispatched action name must be defined.');
+        this.check(storeActionClass, 'The store action class must be defined.');
+        this.check(!this.actions[actionName], `Action ${actionName} is already registered in the store.`);
 
-        //TODO check if action is already registered
-
-        this.actions[actionName] = new (<Function>storeActionClass);
+        this.actions[actionName] = this.injector.get(storeActionClass);
     }
 
     protected registerAll() {
