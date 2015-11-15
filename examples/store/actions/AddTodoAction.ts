@@ -6,7 +6,6 @@ import {List} from 'immutable';
 export class AddTodoAction implements Ng2StoreAction<List<Todo>> {
 
     execute( state:List<Todo>, {description} )  {
-
         return state.push(new Todo(Math.random(), description));
     }
 

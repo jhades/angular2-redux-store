@@ -9,5 +9,4 @@ export class ClearAllAction implements Ng2StoreAction<List<Todo>> {
         return state.clear();
     }
 
-
 }
