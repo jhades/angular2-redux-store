@@ -16,7 +16,7 @@ export abstract class TodoStore extends Ng2Store<List<Todo>> {
 
     constructor(injector: Injector) {
 
-        super(injector, List([new Todo(1, 'task 1'), new Todo(2, 'task 2')]));
+        super(injector, List([]));
 
         this.register(actions.ADD_TODO, AddTodoAction);
         this.register(actions.TOGGLE_ALL, ToggleAllAction);
