@@ -8,6 +8,7 @@ import {AddTodoAction} from './AddTodoAction';
 import {ToggleAllAction} from "./ToggleAllAction";
 import {ToggleTodoAction} from "./ToggleTodoAction";
 import {DeleteTodoAction} from "./DeleteTodoAction";
+import {ClearAllAction} from "./ClearAllAction";
 
 
 @Injectable()
@@ -20,6 +21,7 @@ export abstract class TodoStore extends Ng2Store<List<Todo>> {
         this.register(actions.TOGGLE_ALL, ToggleAllAction);
         this.register(actions.TOGGLE_TODO, ToggleTodoAction);
         this.register(actions.DELETE_TODO, DeleteTodoAction);
+        this.register(actions.CLEAR_ALL, ClearAllAction);
     }
 
 }

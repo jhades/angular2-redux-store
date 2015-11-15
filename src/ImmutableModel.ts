@@ -11,20 +11,6 @@ export class Ng2StoreModel<M extends Ng2StoreModel> {
         Ng2StoreModel.initModel(this);
     }
 
-    static initModel(model: M) {
-
-        //TODO basic validation
-
-        let keys: string[] = <string[]>model._data.keySeq().toArray();
-
-        keys.forEach( (property) => {
-                Object.defineProperty(model, property, {
-                    get: () => model._data.get(property)
-                });
-        });
-
-    }
-
     static from(original: M, differences: Object): M {
 
         //TODO basic validation
@@ -35,5 +21,20 @@ export class Ng2StoreModel<M extends Ng2StoreModel> {
         Ng2StoreModel.initModel(copiedModel);
         return copiedModel;
     }
+
+    private static initModel(model: M) {
+
+        //TODO basic validation
+
+        let keys: string[] = <string[]>model._data.keySeq().toArray();
+
+        keys.forEach( (property) => {
+            Object.defineProperty(model, property, {
+                get: () => model._data.get(property)
+            });
+        });
+
+    }
+
 
 }

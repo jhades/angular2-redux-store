@@ -21,7 +21,7 @@ import * as actions from './store/actions';
 
                 <todo-list [todos]="store.state" (toggle-all)="onToggleAll()"></todo-list>
 
-                <todo-footer [hidden]="store.state.size === 0" [count]="store.state.size"></todo-footer>
+                <todo-footer [hidden]="store.state.size === 0" [count]="store.state.size" (clear)="onClear()"></todo-footer>
 
             </section>
             <footer id="info">
@@ -42,6 +42,10 @@ export class App {
 
     onToggleAll() {
         this.store.dispatch(actions.TOGGLE_ALL);
+    }
+
+    onClear() {
+        this.store.dispatch(actions.CLEAR_ALL);
     }
 
 

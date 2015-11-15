@@ -31,8 +31,8 @@ import * as actions from './store/actions';
 export class TodoList {
 
     @Input() todos: List<Todo>;
-    @Output()  toggleAll = new EventEmitter();
-    @Output()  deleteTodo = new EventEmitter();
+    @Output()  toggleAll: EventEmitter = new EventEmitter();
+    @Output()  deleteTodo: EventEmitter = new EventEmitter();
 
     constructor(private store: TodoStore) {
 
