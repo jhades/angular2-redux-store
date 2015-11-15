@@ -2,6 +2,7 @@
 
 import  'reflect-metadata';
 import {Component, bootstrap} from 'angular2/angular2';
+import {HTTP_PROVIDERS} from 'angular2/http';
 import {Header} from './Header';
 import {TodoList} from './TodoList';
 import {Todo} from "./Todo";
@@ -62,6 +63,7 @@ export class App {
 }
 
 bootstrap(App, [
+    HTTP_PROVIDERS,
     TodoStore,
     AddTodoAction,
     ToggleAllAction,
