@@ -1,6 +1,6 @@
 import {Ng2StoreAction} from "ng2-store";
 import {List} from 'immutable';
-import {Todo} from "../Todo";
+import {Todo} from "../../Todo";
 
 export class DeleteTodoAction implements Ng2StoreAction<List<Todo>> {
 

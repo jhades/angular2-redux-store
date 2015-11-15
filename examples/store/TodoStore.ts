@@ -4,11 +4,11 @@ import {List} from 'immutable';
 import {Todo} from "./../Todo";
 import {Ng2Store} from 'ng2-store';
 import * as actions from './actions';
-import {AddTodoAction} from './AddTodoAction';
+import {AddTodoAction} from './actions/AddTodoAction';
 import {ToggleAllAction} from "./ToggleAllAction";
 import {ToggleTodoAction} from "./ToggleTodoAction";
-import {DeleteTodoAction} from "./DeleteTodoAction";
-import {ClearAllAction} from "./ClearAllAction";
+import {DeleteTodoAction} from "./actions/DeleteTodoAction";
+import {ClearAllAction} from "./actions/ClearAllAction";
 
 
 @Injectable()
