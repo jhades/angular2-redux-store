@@ -49,6 +49,8 @@ export abstract class Ng2Store<S> {
             this.currentAction = this.actions[actionName];
 
             var newState = this.currentAction.execute(this._state, args);
+
+            this.check(newState, `Action ${this.currentActionName} must return the new state (it cannot undefined).`);
         }
         finally {
             this.isDispatchOngoing = false;
