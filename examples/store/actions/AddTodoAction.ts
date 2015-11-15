@@ -1,8 +1,10 @@
 
+import {Injectable} from 'angular2/angular2';
 import {Todo} from "../../Todo";
 import {Ng2StoreAction} from "ng2-store";
 import {List} from 'immutable';
 
+@Injectable()
 export class AddTodoAction implements Ng2StoreAction<List<Todo>> {
 
     execute( state:List<Todo>, {description} )  {
