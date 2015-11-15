@@ -21,7 +21,7 @@ import * as actions from './store/actions';
 
                 <todo-list [todos]="store.state" (toggle-all)="onToggleAll()"></todo-list>
 
-                <todo-footer [hidden]="store.state.size === 0"></todo-footer>
+                <todo-footer [hidden]="store.state.size === 0" [count]="store.state.size"></todo-footer>
 
             </section>
             <footer id="info">
