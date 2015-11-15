@@ -14,6 +14,8 @@ This should install jspm, angular2 and immutable.js.
  - middleware mechanism
  - logging middleware
  - undo /redo middleware?
+ - tests
+ - docs
  - typings
 
 
