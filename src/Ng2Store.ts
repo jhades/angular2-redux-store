@@ -7,6 +7,11 @@ export abstract class Ng2Store<S> {
 
     actions: {[actionName: string]: Ng2StoreAction<S> } = {};
 
+    isDispatchOngoing = false;
+
+    currentActionName: string;
+    currentAction: Ng2StoreAction<S> = null;
+
     constructor(initialState: S) {
         this._state = initialState;
     }
@@ -34,13 +39,19 @@ export abstract class Ng2Store<S> {
 
     dispatch(actionName: string, args: Object = {})  {
 
-        //TODO basic API validation
+        this.check(actionName, 'The dispatched action name needs to be defined.');
+        this.check(this.actions[actionName], `Action ${actionName} is not registered in the store.`);
+        this.check(!this.isDispatchOngoing, `Action ${this.currentActionName} is already being dispatched. Cannot dispatch action ${actionName} before the current action finishes.`);
 
-        //TODO check if dispatch is ongoing
+        try {
+            this.isDispatchOngoing = true;
+            this.currentAction = this.actions[actionName];
 
-        //TODO check if action is registered
-
-        var newState = this.actions[actionName].execute(this._state, args);
+            var newState = this.currentAction.execute(this._state, args);
+        }
+        finally {
+            this.isDispatchOngoing = false;
+        }
 
         if (newState) {
             this._state = newState;
@@ -57,6 +68,13 @@ export abstract class Ng2Store<S> {
         //TODO
 
         //TODO check if dispatch is ongoing
+    }
+
+    check(condition, message:String) {
+        if (!condition) {
+            throw new Error(message);
+        }
+
     }
 
 }
