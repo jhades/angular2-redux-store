@@ -10,7 +10,7 @@ This should install jspm, angular2 and immutable.js.
  
 # TODO
  
-  - cross browser support
+ - cross browser support
  - example with Http
  - middleware mechanism
  - logging middleware
