@@ -7,14 +7,14 @@
     "build": "rm -rf build && mkdir build && tsc || true",
     "postinstall": "npm run build && jspm install",
     "watch": "rm -rf build && mkdir build && tsc -w",
-    "start": "http-server -c-1  ."
+    "start": "node build/examples/server.js"
   },
   "author": "jhades.dev@gmail.com",
   "license": "MIT",
   "dependencies": {},
   "devDependencies": {
     "angular2": "^2.0.0-alpha.45",
-    "http-server": "0.8.5",
+    "express": "^4.13.3",
     "jspm": "^0.16.14",
     "typescript": "^1.6.2"
   },

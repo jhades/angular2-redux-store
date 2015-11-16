@@ -11,6 +11,10 @@ export class Ng2StoreModel<M extends Ng2StoreModel> {
         Ng2StoreModel.initModel(this);
     }
 
+    toJS() {
+        return this._data.toJS();
+    }
+
     static from(original: M, differences: Object): M {
 
         //TODO basic validation
