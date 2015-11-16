@@ -23,9 +23,9 @@ export abstract class Ng2Store<S> {
 
     protected register(actionName: string, storeActionClass: Ng2StoreAction<S> ) {
 
-        this.check(actionName, 'The dispatched action name must be defined.');
-        this.check(storeActionClass, 'The store action class must be defined.');
-        this.check(!this.actions[actionName], `Action ${actionName} is already registered in the store.`);
+        this.assert(actionName, 'The dispatched action name must be defined.');
+        this.assert(storeActionClass, 'The store action class must be defined.');
+        this.assert(!this.actions[actionName], `Action ${actionName} is already registered in the store.`);
 
         this.actions[actionName] = this.injector.get(storeActionClass);
     }
@@ -40,40 +40,48 @@ export abstract class Ng2Store<S> {
 
     dispatch(actionName: string, args: Object = {})  {
 
-        this.check(actionName, 'The dispatched action name needs to be defined.');
-        this.check(this.actions[actionName], `Action ${actionName} is not registered in the store.`);
-        this.check(!this.isDispatchOngoing, `Action ${this.currentActionName} is already being dispatched. Cannot dispatch action ${actionName} before the current action finishes.`);
+        this.assert(actionName, 'The dispatched action name needs to be defined.');
+        this.assert(this.actions[actionName], `Action ${actionName} is not registered in the store.`);
+        this.assert(!this.isDispatchOngoing, `Action ${this.currentActionName} is already being dispatched. Cannot dispatch action ${actionName} before the current action finishes.`);
 
         try {
             this.isDispatchOngoing = true;
             this.currentAction = this.actions[actionName];
 
-            var newState = this.currentAction.execute(this._state, args);
+            let result = this.currentAction.execute(this._state, args);
 
-            this.check(newState, `Action ${this.currentActionName} must return the new state (it cannot undefined).`);
+            this.assert(result, `Action ${this.currentActionName} must return either the new state or an observable (that returns the new state eventually).`);
+
+            if (result.subscribe) {
+                result.subscribe(
+                    newState => this._state = newState,
+                    error => console.log(error) //TODO
+                );
+            }
+            else {
+                this._state = result;
+            }
+
+
         }
         finally {
             this.isDispatchOngoing = false;
-        }
-
-        if (newState) {
-            this._state = newState;
         }
     }
 
     undo() {
         //TODO
 
-        //TODO check if dispatch is ongoing
+        //TODO assert if dispatch is ongoing
     }
 
     redo() {
         //TODO
 
-        //TODO check if dispatch is ongoing
+        //TODO assert if dispatch is ongoing
     }
 
-    check(condition, message:String) {
+    assert(condition, message:String) {
         if (!condition) {
             throw new Error(message);
         }

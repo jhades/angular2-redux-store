@@ -1,4 +1,6 @@
 /// <reference path="../jspm_packages/npm/immutable@3.7.5/dist/immutable.d.ts"/>
+/// <reference path="../node_modules/angular2/angular2.d.ts"/>
+
 
 import  'reflect-metadata';
 import {Component, bootstrap} from 'angular2/angular2';
