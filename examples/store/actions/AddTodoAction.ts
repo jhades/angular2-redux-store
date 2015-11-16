@@ -17,7 +17,7 @@ export class AddTodoAction implements Ng2StoreAction<List<Todo>> {
         let newTodo = new Todo(Math.random(), description);
 
         return this.http.post('/todo', JSON.stringify(newTodo.toJS()))
-            .map((res) => res.json());
+            .map((res) => List(res.json()));
 
     }
 
