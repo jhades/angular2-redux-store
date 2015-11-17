@@ -13,7 +13,7 @@ export abstract class Ng2Store<S> {
     currentAction: Ng2StoreAction<S> = null;
 
 
-    constructor(private injector: Injector, initialState: S) {
+    constructor(private injector: Injector, initialState: S, ...middlewares ) {
         this._state = initialState;
     }
 

@@ -13,7 +13,7 @@
   "license": "MIT",
   "dependencies": {},
   "devDependencies": {
-    "angular2": "^2.0.0-alpha.45",
+    "angular2": "^2.0.0-alpha.46",
     "express": "^4.13.3",
     "jspm": "^0.16.14",
     "typescript": "^1.6.2"
