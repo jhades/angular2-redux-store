@@ -50,7 +50,7 @@ export abstract class Ng2Store<S> {
 
             let result = this.currentAction.execute(this._state, args);
 
-            this.assert(result, `Action ${this.currentActionName} must return either the new state or an observable`);
+            this.assert(result, `Action ${this.currentActionName} must return either be the new state or an observable (that eventuallt returns the new state)`);
 
             if (result.subscribe) {
                 result.subscribe(
