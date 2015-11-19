@@ -43,12 +43,11 @@ export class App {
     }
 
     onAddTodo(description) {
-        this.store.dispatch(actions.ADD_TODO, {description});
-        /* TODO
+        this.store.dispatch(actions.ADD_TODO, {description})
             .subscribe(
                 res => console.log('TODO added successfully'),
                 error => console.log(`Error occurred: ${error} `)
-            );*/
+            );
     }
 
     onToggleAll() {

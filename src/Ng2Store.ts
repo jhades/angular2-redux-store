@@ -52,16 +52,18 @@ export abstract class Ng2Store<S> {
 
             this.assert(result, `Action ${this.currentActionName} must return either be the new state or an observable (that eventuallt returns the new state)`);
 
+            // if the action is asynchronous (i.e returns an observable), return also an observable that will provide the state
             if (result.subscribe) {
-                result.subscribe(
-                    newState => this._state = newState,
-                    error => console.log(error) //TODO
-                );
+                return result.map(newState => {
+                    this._state = newState;
+                    return newState;
+                });
             }
+            // if the action is synchronous, return the new state
             else {
                 this._state = result;
+                return this._state;
             }
-
 
         }
         finally {
