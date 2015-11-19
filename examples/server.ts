@@ -1,24 +1,24 @@
 
 let express = require('express');
+let bodyParser = require('body-parser');
 
 let app = express();
 
 let todos = [];
 
-
 app.use(express.static('.'));
+app.use(bodyParser.json());
+
 
 app.post('/todo', (req, res) => {
 
     console.log(req.body);
 
-    let todo = JSON.parse(req.body);
+    let todo = req.body;
 
     todos.push(todo);
 
-    res.body = JSON.stringify(todos);
-
-    res.end();
+    res.send(todos);
 });
 
 let server = app.listen(8080, function() {
