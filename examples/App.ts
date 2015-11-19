@@ -13,6 +13,7 @@ import {ToggleAllAction} from "./store/actions/ToggleAllAction";
 import {ToggleTodoAction} from "./store/actions/ToggleTodoAction";
 import {DeleteTodoAction} from "./store/actions/DeleteTodoAction";
 import {ClearAllAction} from "./store/actions/ClearAllAction";
+import {TodoService} from "./TodoService";
 
 
 @Component({
@@ -43,11 +44,11 @@ export class App {
 
     onAddTodo(description) {
         this.store.dispatch(actions.ADD_TODO, {description});
-            // TODO
-            /*.subscribe(
+        /* TODO
+            .subscribe(
                 res => console.log('TODO added successfully'),
                 error => console.log(`Error occurred: ${error} `)
-            ); */
+            );*/
     }
 
     onToggleAll() {
@@ -63,6 +64,7 @@ export class App {
 
 bootstrap(App, [
     HTTP_PROVIDERS,
+    TodoService,
     TodoStore,
     AddTodoAction,
     ToggleAllAction,
