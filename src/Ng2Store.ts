@@ -21,6 +21,10 @@ export abstract class Ng2Store<S> {
         return this._state;
     };
 
+    protected setState(state: S):void {
+        this._state = state;
+    }
+
     protected register(actionName: string, storeActionClass: Ng2StoreAction<S> ) {
 
         this.assert(actionName, 'The dispatched action name must be defined.');
@@ -50,7 +54,7 @@ export abstract class Ng2Store<S> {
 
             let result = this.currentAction.execute(this._state, args);
 
-            this.assert(result, `Action ${this.currentActionName} must return either be the new state or an observable (that eventuallt returns the new state)`);
+            this.assert(result, `Action ${this.currentActionName} must return either be the new state or an observable (that eventually returns the new state)`);
 
             // if the action is asynchronous (i.e returns an observable), return also an observable that will provide the new state
             if (result.subscribe) {

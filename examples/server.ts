@@ -10,7 +10,11 @@ app.use(express.static('.'));
 app.use(bodyParser.json());
 
 
-app.post('/todo', (req, res) => {
+app.route('/todo')
+    .get((req, res) => {
+        res.send(todos);
+    })
+    .post((req, res) => {
 
     console.log(req.body);
 
