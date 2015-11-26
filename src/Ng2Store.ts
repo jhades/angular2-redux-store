@@ -44,7 +44,7 @@ export abstract class Ng2Store<S> {
             this.isDispatchOngoing = true;
             this.currentAction = this.actions[actionName];
 
-            let result : S | Observable<S> =  this.currentAction.execute(this._state, args);
+            let result : S|Observable<S> =  this.currentAction.execute(this._state, args);
 
             this.assert(result, `Action ${this.currentActionName} must return either be the new state or an observable (that eventually returns the new state)`);
 
