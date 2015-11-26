@@ -28,9 +28,7 @@ export abstract class TodoStore extends Ng2Store<List<Todo>> {
 
         todoService.getAllTodos()
             .subscribe(
-                res => {
-                    this.setState(res);
-                },
+                res => this.setState(res),
                 err => console.log("Error retrieving Todos")
             );
     }
