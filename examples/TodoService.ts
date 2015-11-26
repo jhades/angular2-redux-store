@@ -14,7 +14,6 @@ export class TodoService {
         this.http = http;
     }
 
-
     getAllTodos() {
         return this.http.get('/todo')
             .map(res => List(res.json()) );
@@ -27,7 +26,6 @@ export class TodoService {
         return this.http.post('/todo', JSON.stringify(newTodo.toJS()),{headers})
             .map((res) => List(res.json()));
     }
-
 
     deleteTodo(deletedTodo: Todo) {
 
