@@ -44,7 +44,11 @@ export class TodoList {
     }
 
     delete(todo:Todo) {
-        this.store.dispatch(actions.DELETE_TODO, todo);
+        this.store.dispatch(actions.DELETE_TODO, todo)
+            .subscribe(
+                res => console.log('TODO deleted successfully'),
+                error => console.log(`Error occurred: ${error} `)
+            );
     }
 
 }

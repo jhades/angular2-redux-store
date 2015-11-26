@@ -17,6 +17,7 @@
     "body-parser": "^1.14.1",
     "express": "^4.13.3",
     "jspm": "^0.16.14",
+    "lodash": "^3.10.1",
     "typescript": "^1.6.2"
   },
   "jspm": {
