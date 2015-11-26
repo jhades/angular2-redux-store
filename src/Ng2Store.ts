@@ -34,14 +34,6 @@ export abstract class Ng2Store<S> {
         this.actions[actionName] = this.injector.get(storeActionClass);
     }
 
-    protected registerAll() {
-
-        //TODO basic API validation
-
-        //TODO alternate register function based on a list of arrays with key pair tuples
-
-    }
-
     dispatch(actionName: string, args: Object = {}) : S | Observable<S>  {
 
         this.assert(actionName, 'The dispatched action name needs to be defined.');
@@ -52,12 +44,12 @@ export abstract class Ng2Store<S> {
             this.isDispatchOngoing = true;
             this.currentAction = this.actions[actionName];
 
-            let result = this.currentAction.execute(this._state, args);
+            let result : S | Observable<S> =  this.currentAction.execute(this._state, args);
 
             this.assert(result, `Action ${this.currentActionName} must return either be the new state or an observable (that eventually returns the new state)`);
 
             // if the action is asynchronous (i.e returns an observable), return also an observable that will provide the new state
-            if (result.subscribe) {
+            if (result instanceof Observable) {
                 return result.map(newState => {
                     this._state = newState;
                     return newState;
