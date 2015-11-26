@@ -1,5 +1,5 @@
 import {Ng2StoreAction} from "./Ng2StoreAction";
-import {Injector} from 'angular2/angular2';
+import {Injector, Observable} from 'angular2/angular2';
 
 export abstract class Ng2Store<S> {
 
@@ -42,7 +42,7 @@ export abstract class Ng2Store<S> {
 
     }
 
-    dispatch(actionName: string, args: Object = {})  {
+    dispatch(actionName: string, args: Object = {}) : S | Observable<S>  {
 
         this.assert(actionName, 'The dispatched action name needs to be defined.');
         this.assert(this.actions[actionName], `Action ${actionName} is not registered in the store.`);

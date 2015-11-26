@@ -3,7 +3,7 @@ import {Injectable,Inject} from 'angular2/angular2';
 import  {Http,Headers} from 'angular2/http';
 import {Todo} from "./Todo";
 import {List} from 'immutable';
-import {Observable} from "../node_modules/angular2/src/facade/async";
+import {Observable} from "angular2/angular2";
 
 @Injectable()
 export class TodoService {
@@ -17,10 +17,10 @@ export class TodoService {
 
     getAllTodos() {
         return this.http.get('/todo')
-            .map(res => List(res.json()));
+            .map(res => List(res.json()) );
     }
 
-    saveTodo(newTodo: Todo) {
+    saveTodo(newTodo: Todo) : Observable<List<Todo>> {
         var headers = new Headers();
         headers.append('Content-Type', 'application/json; charset=utf-8');
 
