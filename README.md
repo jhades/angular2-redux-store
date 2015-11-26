@@ -10,6 +10,7 @@ This should install jspm, angular2 and immutable.js.
  
 # TODO
 
+ - subscribe() API
  - toggle TODO backend action
  - middleware mechanism 
  - ensure cross browser support
