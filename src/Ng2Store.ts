@@ -38,7 +38,7 @@ export abstract class Ng2Store<S> {
     }
 
 
-    subscribe(success: Function, error: Function){
+    subscribe(success: Function, error: Function = undefined, finished: Function = undefined){
         this._stateObs.subscribe(success, error);
     }
 
