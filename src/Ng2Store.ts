@@ -1,9 +1,11 @@
 import {Ng2StoreAction} from "./Ng2StoreAction";
-import {Injector, Observable} from 'angular2/angular2';
+import {Injector, EventEmitter, Observable} from 'angular2/angular2';
 
 export abstract class Ng2Store<S> {
 
     _state: S;
+
+    _stateObs = new EventEmitter();
 
     actions: {[actionName: string]: Ng2StoreAction<S> } = {};
 
@@ -23,6 +25,7 @@ export abstract class Ng2Store<S> {
 
     protected setState(state: S):void {
         this._state = state;
+        this._stateObs.next(this._state);
     }
 
     protected register(actionName: string, storeActionClass: Ng2StoreAction<S> ) {
@@ -32,6 +35,11 @@ export abstract class Ng2Store<S> {
         this.assert(!this.actions[actionName], `Action ${actionName} is already registered in the store.`);
 
         this.actions[actionName] = this.injector.get(storeActionClass);
+    }
+
+
+    subscribe(success: Function, error: Function){
+        this._stateObs.subscribe(success, error);
     }
 
     dispatch(actionName: string, args: Object = {}) : S | Observable<S>  {
@@ -51,7 +59,7 @@ export abstract class Ng2Store<S> {
             // if the action is asynchronous (i.e returns an observable), return also an observable that will provide the new state
             if (result instanceof Observable) {
                 return result.map(newState => {
-                    this._state = newState;
+                    this.setState(newState);
                     return newState;
                 });
             }

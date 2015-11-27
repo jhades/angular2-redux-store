@@ -40,6 +40,11 @@ export class App {
 
     constructor(private store: TodoStore) {
 
+        store.subscribe(
+            state => console.log('new state received ' + JSON.stringify(state)),
+            error => console.log(`Error occurred: ${error} `)
+        );
+
     }
 
     onAddTodo(description) {
