@@ -10,8 +10,7 @@ This should install jspm, angular2 and immutable.js.
  
 # TODO
 
- - make the state an observable
- - subscribe() API
+ - fix toggle all, toggle with more than 3 elements see whats going on
  - middleware mechanism 
  - ensure cross browser support
  - undo /redo middleware?
