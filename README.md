@@ -10,8 +10,8 @@ This should install jspm, angular2 and immutable.js.
  
 # TODO
 
- - fix toggle all, toggle with more than 3 elements see whats going on
- - review buildTodos - it should the responsibility of the action to return a new state, not the service 
+ - fix toggle all
+ - review buildTodos - it should be the responsibility of the action to return a new valid state, not the backend service 
  - middleware mechanism 
  - ensure cross browser support
  - undo /redo middleware?
@@ -20,11 +20,3 @@ This should install jspm, angular2 and immutable.js.
  - typings
 
 
-### If building the library and examples on Windows
-
-Run the commands from either Cygwin or the [git bash shell](https://git-scm.com/downloads), which does not require administrator privileges.
-
-
-## Having difficulties?
-
-It would be great to open an issue, even if its simply a question. If running into issues, can you copy the whole error message and add the node and npm version and i'll follow it up. Thanks.
