@@ -11,6 +11,7 @@ This should install jspm, angular2 and immutable.js.
 # TODO
 
  - fix toggle all, toggle with more than 3 elements see whats going on
+ - review buildTodos - it should the responsibility of the action to return a new state, not the service 
  - middleware mechanism 
  - ensure cross browser support
  - undo /redo middleware?

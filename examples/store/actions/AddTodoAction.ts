@@ -8,15 +8,13 @@ import {TodoService} from "../../TodoService";
 @Injectable()
 export class AddTodoAction implements Ng2StoreAction<List<Todo>> {
 
-    private static nextId = 0;
-
     constructor(private todoService: TodoService) {
         this.todoService = todoService;
     }
 
     execute( state:List<Todo>, {description} )  {
 
-        let newTodo = new Todo(++AddTodoAction.nextId, description);
+        let newTodo = new Todo(Math.random(), description);
 
         return this.todoService.saveTodo(newTodo)
                 .map((todos) => List(todos));
