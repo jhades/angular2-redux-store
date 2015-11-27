@@ -40,7 +40,11 @@ export class TodoList {
     }
 
     onToggleTodo(todo: Todo) {
-        this.store.dispatch(actions.TOGGLE_TODO, todo);
+        this.store.dispatch(actions.TOGGLE_TODO, todo)
+            .subscribe(
+                res => console.log('TODO toggled successfully'),
+                error => console.log(`Error occurred: ${error} `)
+            );;
     }
 
     delete(todo:Todo) {

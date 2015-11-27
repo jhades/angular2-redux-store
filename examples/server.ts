@@ -16,6 +16,12 @@ app.route('/todo')
         console.log(JSON.stringify(todos));
         res.send(todos);
     })
+    .put((req, res) => {
+        let todo = req.body;
+        let toggled = _.find(todos, (todo) => todo.id === toggled.id);
+        toggled.completed = !toggled.completed;
+        res.send(todos);
+    })
     .delete((req,res) => {
         console.log('removing todo with id = ' + req.query.id);
         todos = _.remove(todos,(todo) => todo.id != req.query.id );
