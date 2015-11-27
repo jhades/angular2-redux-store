@@ -54,18 +54,18 @@ export abstract class Ng2Store<S> {
 
             let result : S|Observable<S> =  this.currentAction.execute(this._state, args);
 
-            this.assert(result, `Action ${this.currentActionName} must return either be the new state or an observable (that eventually returns the new state)`);
+            this.assert(result, `Action ${this.currentActionName} cannot return ${result}. It must return either be the new state or an observable (that eventually returns the new state)`);
 
             // if the action is asynchronous (i.e returns an observable), return also an observable that will provide the new state
             if (result instanceof Observable) {
                 return result.map(newState => {
                     this.setState(newState);
-                    return newState;
+                    return this._state;
                 });
             }
             // if the action is synchronous, return the new state
             else {
-                this._state = result;
+                this.setState(result);
                 return this._state;
             }
 
