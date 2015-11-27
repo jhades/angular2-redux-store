@@ -42,7 +42,7 @@ export class TodoService {
 
     buildTodos(response: Observable)  {
         return response.map(res => {
-            return res.json().map(todo => new Todo(todo.id, todo.description, todo.completed));
+            return List(res.json().map(todo => new Todo(todo.id, todo.description, todo.completed)));
         });
     }
 
