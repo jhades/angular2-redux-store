@@ -12,11 +12,12 @@ This should install jspm, angular2 and immutable.js.
 
  - fix toggle all
  - review buildTodos - it should be the responsibility of the action to return a new valid state, not the backend service 
- - middleware mechanism 
- - ensure cross browser support
- - undo /redo middleware?
+ - middleware mechanism
+ - undo /redo 
  - tests
+ 
  - docs
  - typings
-
+ - ensure cross browser support
+ 
 
