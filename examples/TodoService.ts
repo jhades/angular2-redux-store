@@ -14,34 +14,36 @@ export class TodoService {
         this.http = http;
     }
 
-    getAllTodos() {
-        return this.http.get('/todo')
-            .map(res => List(res.json()) );
+    getAllTodos() : List<Todo> {
+        return this.buildTodos(this.http.get('/todo'));
     }
 
     saveTodo(newTodo: Todo) : Observable<List<Todo>> {
         var headers = new Headers();
         headers.append('Content-Type', 'application/json; charset=utf-8');
 
-        return this.http.post('/todo', JSON.stringify(newTodo.toJS()),{headers})
-            .map((res) => List(res.json()));
+        return this.buildTodos(this.http.post('/todo', JSON.stringify(newTodo.toJS()),{headers}));
     }
 
     deleteTodo(deletedTodo: Todo) {
         let params = new URLSearchParams();
         params.append('id', '' + deletedTodo.id );
 
-        return this.http.delete('/todo', {search: params})
-            .map((res) => List(res.json()));
+        return this.buildTodos(this.http.delete('/todo', {search: params}));
     }
 
 
     toggleTodo(toggled: Todo) {
         var headers = new Headers();
         headers.append('Content-Type', 'application/json; charset=utf-8');
+        return this.buildTodos(this.http.put('/todo', JSON.stringify(toggled.toJS()),{headers}));
+    }
 
-        return this.http.put('/todo', JSON.stringify(toggled.toJS()),{headers})
-            .map((res) => List(res.json()));
+
+    buildTodos(response: Observable)  {
+        return response.map(res => {
+            return res.json().map(todo => new Todo(todo.id, todo.description, todo.completed));
+        });
     }
 
 }

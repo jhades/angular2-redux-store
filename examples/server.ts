@@ -17,9 +17,10 @@ app.route('/todo')
         res.send(todos);
     })
     .put((req, res) => {
-        let todo = req.body;
-        let toggled = _.find(todos, (todo) => todo.id === toggled.id);
+        let json = req.body;
+        let toggled = _.find(todos, (todo) => todo.id == json.id);
         toggled.completed = !toggled.completed;
+        console.log(JSON.stringify(todos));
         res.send(todos);
     })
     .delete((req,res) => {
