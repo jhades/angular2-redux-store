@@ -11,4 +11,8 @@ export class Todo extends ImmutableObject<Todo> {
         super({id, description, completed});
     }
 
+    static fromJson({id,description, completed}): Todo {
+        return new Todo(id, description, completed);
+    }
+
 }
