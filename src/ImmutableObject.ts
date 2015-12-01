@@ -2,7 +2,7 @@
 
 import {Map} from 'immutable';
 
-export class ImmutableObject<M> {
+export class ImmutableObject {
 
     _data: Map;
 
@@ -15,18 +15,18 @@ export class ImmutableObject<M> {
         return this._data.toJS();
     }
 
-    static from(original: M, differences: Object): M {
+    static from(original, differences: Object) {
 
         //TODO basic validation
 
-        let copiedModel = <M> {
+        let copiedModel = {
             _data: original._data.merge(differences)
         };
         ImmutableObject.initModel(copiedModel);
         return copiedModel;
     }
 
-    private static initModel(model: M) {
+    private static initModel(model) {
 
         //TODO basic validation
 
