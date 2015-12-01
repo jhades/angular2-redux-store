@@ -20,5 +20,9 @@ export class Todo extends ImmutableObject {
         return List(todos.map(Todo.fromJson));
     }
 
+    static fromHttpResponse(res) {
+        return Todo.fromJsonList(res.json());
+    }
+
 
 }

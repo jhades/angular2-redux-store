@@ -14,8 +14,8 @@ export class TodoService {
         this.http = http;
     }
 
-    getAllTodos() : List<Todo> {
-        return this.http.get('/todo').map(TodoService.build);
+    getAllTodos() {
+        return this.http.get('/todo');
     }
 
     saveTodo(newTodo: Todo) : Observable<List<Todo>> {
