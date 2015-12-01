@@ -1,4 +1,6 @@
 
+/// <reference path="../typings/node/node.d.ts"/>
+
 let express = require('express');
 let bodyParser = require('body-parser');
 let _ = require('lodash');

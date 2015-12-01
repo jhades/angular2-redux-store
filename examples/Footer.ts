@@ -12,7 +12,7 @@ export class Footer {
 
     @Input() count: number = 0;
 
-    @Output() clear: EventEmitter = new EventEmitter();
+    @Output() clear: EventEmitter<any> = new EventEmitter();
 
     onClear() {
         this.clear.next();

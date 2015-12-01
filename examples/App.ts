@@ -1,4 +1,6 @@
 
+/// <reference path="../jspm_packages/npm/immutable@3.7.5/dist/immutable.d.ts" />
+
 import  'reflect-metadata';
 import {Component, bootstrap} from 'angular2/angular2';
 import {HTTP_PROVIDERS} from 'angular2/http';

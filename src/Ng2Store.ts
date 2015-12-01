@@ -59,13 +59,13 @@ export abstract class Ng2Store<S> {
             // if the action is asynchronous (i.e returns an observable), return also an observable that will provide the new state
             if (result instanceof Observable) {
                 return result.map(newState => {
-                    this.setState(newState);
+                    this.setState(<S>newState);
                     return this._state;
                 });
             }
             // if the action is synchronous, return the new state
             else {
-                this.setState(result);
+                this.setState(<S>result);
                 return this._state;
             }
 

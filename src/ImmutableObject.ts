@@ -2,7 +2,7 @@
 
 import {Map} from 'immutable';
 
-export class ImmutableObject<M extends ImmutableObject> {
+export class ImmutableObject<M> {
 
     _data: Map;
 
