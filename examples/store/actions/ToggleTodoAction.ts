@@ -12,7 +12,8 @@ export class ToggleTodoAction implements Ng2StoreAction<List<Todo>> {
     }
 
     execute(state:List<Todo>, toggled:Todo) : Observable<List<Todo>> {
-        return this.todoService.toggleTodo(toggled);
+        return this.todoService.toggleTodo(toggled)
+            .map(res => Todo.fromJsonList(res.json()));
     }
 
 }

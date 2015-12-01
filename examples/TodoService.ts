@@ -36,12 +36,7 @@ export class TodoService {
     toggleTodo(toggled: Todo) {
         var headers = new Headers();
         headers.append('Content-Type', 'application/json; charset=utf-8');
-        return this.http.put('/todo', JSON.stringify(toggled.toJS()),{headers}).map(TodoService.build);
+        return this.http.put('/todo', JSON.stringify(toggled.toJS()),{headers});
     }
-
-    static build(res) {
-        return Todo.fromJsonList(res.json());
-    }
-
 
 }
