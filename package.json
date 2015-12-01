@@ -2,7 +2,7 @@
   "name": "ng2-store",
   "version": "1.0.0",
   "description": "An Easy to use Data Store for Angular 2",
-  "main": "lib/index.js",
+  "main": "build/ng2-store.js",
   "scripts": {
     "build": "rm -rf build && mkdir build && tsc || true",
     "postinstall": "npm run build && jspm install",
@@ -18,7 +18,7 @@
     "express": "^4.13.3",
     "jspm": "^0.16.14",
     "lodash": "^3.10.1",
-    "typescript": "^1.6.2"
+    "typescript": "^1.7.3"
   },
   "jspm": {
     "dependencies": {
