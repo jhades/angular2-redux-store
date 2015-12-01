@@ -2,13 +2,13 @@
 
 import {Map} from 'immutable';
 
-export class Ng2StoreModel<M extends Ng2StoreModel> {
+export class immutableObject<M extends immutableObject> {
 
     _data: Map;
 
     constructor(properties: Object) {
         this._data = Map(properties);
-        Ng2StoreModel.initModel(this);
+        immutableObject.initModel(this);
     }
 
     toJS() {
@@ -22,7 +22,7 @@ export class Ng2StoreModel<M extends Ng2StoreModel> {
         let copiedModel = <M> {
             _data: original._data.merge(differences)
         };
-        Ng2StoreModel.initModel(copiedModel);
+        immutableObject.initModel(copiedModel);
         return copiedModel;
     }
 

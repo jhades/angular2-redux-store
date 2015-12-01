@@ -1,7 +1,7 @@
 
-import {Ng2StoreModel} from 'ng2-store';
+import {immutableObject} from 'ng2-store';
 
-export class Todo extends Ng2StoreModel<Todo> {
+export class Todo extends immutableObject<Todo> {
 
     id:number;
     description:string;
