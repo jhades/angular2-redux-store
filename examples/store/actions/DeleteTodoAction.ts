@@ -12,7 +12,8 @@ export class DeleteTodoAction implements Ng2StoreAction<List<Todo>> {
     }
 
     execute(state:Immutable.List<Todo>, deleted) : Observable<List<Todo>> {
-        return this.todoService.deleteTodo(deleted);
+        return this.todoService.deleteTodo(deleted)
+            .map(res => Todo.fromJsonList(res.json()));
     }
 
 }

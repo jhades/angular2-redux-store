@@ -29,7 +29,7 @@ export class TodoService {
         let params = new URLSearchParams();
         params.append('id', '' + deletedTodo.id );
 
-        return this.http.delete('/todo', {search: params}).map(TodoService.build);
+        return this.http.delete('/todo', {search: params});
     }
 
 
