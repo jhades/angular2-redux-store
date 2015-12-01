@@ -15,35 +15,33 @@ export class TodoService {
     }
 
     getAllTodos() : List<Todo> {
-        return this.buildTodos(this.http.get('/todo'));
+        return this.http.get('/todo').map(TodoService.build);
     }
 
     saveTodo(newTodo: Todo) : Observable<List<Todo>> {
         var headers = new Headers();
         headers.append('Content-Type', 'application/json; charset=utf-8');
 
-        return this.buildTodos(this.http.post('/todo', JSON.stringify(newTodo.toJS()),{headers}));
+        return this.http.post('/todo', JSON.stringify(newTodo.toJS()),{headers}).map(TodoService.build);
     }
 
     deleteTodo(deletedTodo: Todo) {
         let params = new URLSearchParams();
         params.append('id', '' + deletedTodo.id );
 
-        return this.buildTodos(this.http.delete('/todo', {search: params}));
+        return this.http.delete('/todo', {search: params}).map(TodoService.build);
     }
 
 
     toggleTodo(toggled: Todo) {
         var headers = new Headers();
         headers.append('Content-Type', 'application/json; charset=utf-8');
-        return this.buildTodos(this.http.put('/todo', JSON.stringify(toggled.toJS()),{headers}));
+        return this.http.put('/todo', JSON.stringify(toggled.toJS()),{headers}).map(TodoService.build);
     }
 
-
-    buildTodos(response: Observable)  {
-        return response.map(res => {
-            return List(res.json().map(Todo.fromJson));
-        });
+    static build(res) {
+        return Todo.fromJsonList(res.json());
     }
+
 
 }

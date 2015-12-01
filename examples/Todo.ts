@@ -1,5 +1,6 @@
 
 import {ImmutableObject} from 'ng2-store';
+import {List} from 'immutable';
 
 export class Todo extends ImmutableObject<Todo> {
 
@@ -14,5 +15,10 @@ export class Todo extends ImmutableObject<Todo> {
     static fromJson({id,description, completed}): Todo {
         return new Todo(id, description, completed);
     }
+
+    static fromJsonList(todos: Array) {
+        return List(todos.map(Todo.fromJson));
+    }
+
 
 }
