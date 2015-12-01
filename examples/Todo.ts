@@ -24,5 +24,4 @@ export class Todo extends ImmutableObject {
         return Todo.fromJsonList(res.json());
     }
 
-
 }
