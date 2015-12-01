@@ -2,13 +2,13 @@
 
 import {Map} from 'immutable';
 
-export class immutableObject<M extends immutableObject> {
+export class ImmutableObject<M extends ImmutableObject> {
 
     _data: Map;
 
     constructor(properties: Object) {
         this._data = Map(properties);
-        immutableObject.initModel(this);
+        ImmutableObject.initModel(this);
     }
 
     toJS() {
@@ -22,7 +22,7 @@ export class immutableObject<M extends immutableObject> {
         let copiedModel = <M> {
             _data: original._data.merge(differences)
         };
-        immutableObject.initModel(copiedModel);
+        ImmutableObject.initModel(copiedModel);
         return copiedModel;
     }
 
