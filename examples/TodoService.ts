@@ -22,7 +22,7 @@ export class TodoService {
         var headers = new Headers();
         headers.append('Content-Type', 'application/json; charset=utf-8');
 
-        return this.http.post('/todo', JSON.stringify(newTodo.toJS()),{headers}).map(TodoService.build);
+        return this.http.post('/todo', JSON.stringify(newTodo.toJS()),{headers});
     }
 
     deleteTodo(deletedTodo: Todo) {
