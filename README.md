@@ -10,13 +10,12 @@ This should install jspm, angular2 and immutable.js.
  
 # TODO
 
-- immutable object - can it be nested?
- - synchronous actions can persist changes based on some middleware - onSuccess onError?
- 
- - middleware mechanism
+ - logging middleware
+ - persistence middleware - use for Toggle All
+ - immutable object 
  - undo /redo 
- - tests
- 
+
+ - tests 
  - docs
  - typings
  - immutable dependency?
