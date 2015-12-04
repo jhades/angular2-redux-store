@@ -10,7 +10,7 @@ This should install jspm, angular2 and immutable.js.
  
 # TODO
 
- - rename dispatch to execute
+ - create dispatcher, that can execute an action against multiple stores?
  - logging middleware
  - persistence middleware - use for Toggle All
  - immutable object 
