@@ -10,6 +10,7 @@ This should install jspm, angular2 and immutable.js.
  
 # TODO
 
+ - rename dispatch to execute
  - logging middleware
  - persistence middleware - use for Toggle All
  - immutable object 
