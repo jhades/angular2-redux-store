@@ -10,7 +10,6 @@ import * as actions from './store/actions/actions';
     template: `
 
         <section id="main" [hidden]="todos.size === 0">
-            <input id="toggle-all" type="checkbox" (click)="onToggleAll()">
             <label for="toggle-all">Mark all as complete</label>
             <ul id="todo-list">
                 <li *ng-for="#todo of todos;" [ng-class]="{completed: todo.completed}">
@@ -32,11 +31,6 @@ export class TodoList {
 
     constructor() {
 
-    }
-
-    onToggleAll() {
-        //TODO
-        //this.toggleAll.next(null);
     }
 
     onToggleTodo(todo: Todo) {

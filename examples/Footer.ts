@@ -4,7 +4,7 @@ import {Component, Input, Output, EventEmitter} from 'angular2/angular2';
     selector: 'todo-footer',
     template: `
         <footer id="footer">
-            <button id="clear-completed" (click)="onClear()">Clear All ({{count}})</button>
+            <button>Total Todos: {{count}}</button>
         </footer>
     `
 })
@@ -12,10 +12,5 @@ export class Footer {
 
     @Input() count: number = 0;
 
-    @Output() clear: EventEmitter<any> = new EventEmitter();
-
-    onClear() {
-        this.clear.next();
-    }
 
 }
