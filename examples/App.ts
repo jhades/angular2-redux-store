@@ -10,7 +10,7 @@ import {Todo} from "./Todo";
 import {Footer} from "./Footer";
 import {TodoService} from "./TodoService";
 import {TodoStore} from "./store/TodoStore";
-import {loadTodos} from './store/loadTodos';
+import {loadTodos, addTodo} from './store/todoActions';
 import {List} from 'immutable';
 
 @Component({
@@ -35,7 +35,7 @@ import {List} from 'immutable';
 })
 export class App {
 
-    constructor(private store: TodoStore, todoService: TodoService) {
+    constructor(private store: TodoStore, private todoService: TodoService) {
 
         todoService.getAllTodos()
             .subscribe(
@@ -53,14 +53,15 @@ export class App {
     }
 
     onAddTodo(description) {
-        //TODO
-/*
-        this.store.dispatch(actions.ADD_TODO, {description})
+        let newTodo = new Todo(Math.random(), description);
+
+        this.store.dispatch(addTodo(newTodo));
+
+        this.todoService.saveTodo(newTodo)
             .subscribe(
-                res => console.log('TODO added successfully'),
-                error => console.log(`Error occurred: ${error} `)
+                res => console.log('Todo saved successfully'),
+                err => console.log('Todo not saved, show error message')
             );
-*/
     }
 
     onToggleAll() {
