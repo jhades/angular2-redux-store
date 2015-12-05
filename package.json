@@ -11,9 +11,10 @@
   },
   "author": "jhades.dev@gmail.com",
   "license": "MIT",
-  "dependencies": {},
+  "dependencies": {
+    "angular2": "^2.0.0-alpha.46"
+  },
   "devDependencies": {
-    "angular2": "^2.0.0-alpha.46",
     "body-parser": "^1.14.1",
     "express": "^4.13.3",
     "jspm": "^0.16.14",

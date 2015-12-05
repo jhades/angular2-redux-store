@@ -1,7 +1,7 @@
 
 import {List} from 'immutable';
 import {Todo} from "../Todo";
-import {ADD_TODO,CLEAR_ALL,DELETE_TODO,LOAD_TODOS, TOGGLE_ALL, TOGGLE_TODO} from 'actionsTypes';
+import {ADD_TODO,CLEAR_ALL,DELETE_TODO,LOAD_TODOS, TOGGLE_ALL, TOGGLE_TODO} from './actionsTypes';
 
 export function todoReducers(state: List<Todo>, action) {
     switch(action.type) {
