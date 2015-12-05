@@ -12,16 +12,5 @@ export class Todo extends ImmutableObject {
         super({id, description, completed});
     }
 
-    static fromJson({id,description, completed}): Todo {
-        return new Todo(id, description, completed);
-    }
-
-    static fromJsonList(todos: Object[]) {
-        return List(todos.map(Todo.fromJson));
-    }
-
-    static fromHttpResponse(res) {
-        return Todo.fromJsonList(res.json());
-    }
 
 }

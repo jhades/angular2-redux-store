@@ -23,18 +23,18 @@ app.route('/todo')
         let toggled = _.find(todos, (todo) => todo.id == json.id);
         toggled.completed = !toggled.completed;
         console.log(JSON.stringify(todos));
-        res.send(todos);
+        res.send();
     })
     .delete((req,res) => {
         console.log('removing todo with id = ' + req.query.id);
         todos = _.remove(todos,(todo) => todo.id != req.query.id );
         console.log(JSON.stringify(todos));
-        res.send(todos);
+        res.send();
     })
     .post((req, res) => {
         todos.push(req.body);
         console.log(JSON.stringify(todos));
-        res.send(todos);
+        res.send();
     });
 
 let server = app.listen(8080, function() {

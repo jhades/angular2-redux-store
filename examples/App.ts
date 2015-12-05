@@ -10,7 +10,8 @@ import {Todo} from "./Todo";
 import {Footer} from "./Footer";
 import {TodoService} from "./TodoService";
 import {TodoStore} from "./store/TodoStore";
-
+import {loadTodos} from './store/loadTodos';
+import {List} from 'immutable';
 
 @Component({
     selector: 'app',
@@ -34,7 +35,18 @@ import {TodoStore} from "./store/TodoStore";
 })
 export class App {
 
-    constructor(private store: TodoStore) {
+    constructor(private store: TodoStore, todoService: TodoService) {
+
+        todoService.getAllTodos()
+            .subscribe(
+                res => {
+                    let todos = res.json().map((todo) =>  new Todo(todo.id, todo.description, todo.completed));
+
+                    store.dispatch(loadTodos(List(todos)));
+                },
+                err => console.log("Error retrieving Todos")
+            );
+
         store.value.subscribe(
             state => console.log('new state received ' + JSON.stringify(state))
         );
