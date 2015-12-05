@@ -1,8 +1,8 @@
 import {Ng2StoreAction} from "ng2-store";
 import {List} from 'immutable';
-import {Todo} from "../../Todo";
-import {Injectable, Observable} from 'angular2/angular2';
-import {TodoService} from "../../TodoService";
+import {Todo} from "../../../Todo";
+import {Injectable, Observable} from '../../../../node_modules/angular2/angular2.d';
+import {TodoService} from "../../../TodoService";
 
 @Injectable()
 export class DeleteTodoAction implements Ng2StoreAction<List<Todo>> {

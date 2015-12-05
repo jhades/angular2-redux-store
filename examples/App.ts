@@ -9,6 +9,7 @@ import {TodoList} from './TodoList';
 import {Todo} from "./Todo";
 import {Footer} from "./Footer";
 import {TodoService} from "./TodoService";
+import {TodoStore} from "./store/TodoStore";
 
 
 @Component({
@@ -33,15 +34,10 @@ import {TodoService} from "./TodoService";
 })
 export class App {
 
-    constructor() {
-
-        //TODO
-/*
-        store.subscribe(
+    constructor(store: TodoStore) {
+        store.value.subscribe(
             state => console.log('new state received ' + JSON.stringify(state))
         );
-*/
-
     }
 
     onAddTodo(description) {
@@ -70,5 +66,6 @@ export class App {
 
 bootstrap(App, [
     HTTP_PROVIDERS,
-    TodoService
+    TodoService,
+    TodoStore
 ]);

@@ -1,8 +1,8 @@
-import {Injectable, Observable} from 'angular2/angular2';
+import {Injectable, Observable} from '../../../../node_modules/angular2/angular2.d';
 import {Ng2StoreAction} from "ng2-store";
-import {Todo} from "../../Todo";
+import {Todo} from "../../../Todo";
 import {List} from 'immutable';
-import {TodoService} from "../../TodoService";
+import {TodoService} from "../../../TodoService";
 
 @Injectable()
 export class ToggleTodoAction implements Ng2StoreAction<List<Todo>> {
