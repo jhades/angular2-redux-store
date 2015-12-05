@@ -22,9 +22,9 @@ import {List} from 'immutable';
 
                 <todo-header (todo)="onAddTodo($event)"></todo-header>
 
-                <todo-list [todos]="store.getState()" (toggle-all)="onToggleAll()"></todo-list>
+                <todo-list [todos]="store.getState()"></todo-list>
 
-                <todo-footer [hidden]="store.getState().size === 0" [count]="store.getState().size" (clear)="onClear()"></todo-footer>
+                <todo-footer [hidden]="store.getState().size === 0" [count]="store.getState().size"></todo-footer>
 
             </section>
             <footer id="info">
@@ -63,17 +63,6 @@ export class App {
                 err => console.log('Todo not saved, show error message')
             );
     }
-
-    onToggleAll() {
-        //TODO
-        //this.store.dispatch(actions.TOGGLE_ALL);
-    }
-
-    onClear() {
-        //TODO
-        //this.store.dispatch(actions.CLEAR_ALL);
-    }
-
 
 }
 

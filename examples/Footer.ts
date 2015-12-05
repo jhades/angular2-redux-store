@@ -12,5 +12,4 @@ export class Footer {
 
     @Input() count: number = 0;
 
-
 }
