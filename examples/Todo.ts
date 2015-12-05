@@ -1,5 +1,5 @@
 
-import {ImmutableObject} from 'ng2-store';
+import {ImmutableObject} from './ImmutableObject';
 import {List} from 'immutable';
 
 export class Todo extends ImmutableObject {

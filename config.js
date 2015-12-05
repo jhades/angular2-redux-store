@@ -17,7 +17,7 @@ System.config({
     "babel-runtime": "npm:babel-runtime@5.8.29",
     "core-js": "npm:core-js@1.2.6",
     "immutable": "npm:immutable@3.7.5",
-    "ng2-store": "build/ng2-store",
+    "redux": "npm:redux@3.0.4",
     "reflect-metadata": "npm:reflect-metadata@0.1.2",
     "github:jspm/nodelibs-assert@0.1.0": {
       "assert": "npm:assert@1.3.0"
@@ -51,6 +51,9 @@ System.config({
     },
     "npm:process@0.11.2": {
       "assert": "github:jspm/nodelibs-assert@0.1.0"
+    },
+    "npm:redux@3.0.4": {
+      "process": "github:jspm/nodelibs-process@0.1.2"
     },
     "npm:reflect-metadata@0.1.2": {
       "assert": "github:jspm/nodelibs-assert@0.1.0",

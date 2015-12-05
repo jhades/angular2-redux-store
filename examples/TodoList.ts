@@ -1,7 +1,6 @@
 import {Component,Input, NgFor, NgClass,Output, EventEmitter} from 'angular2/angular2';
 import {Todo} from "./Todo";
 import {List} from 'immutable';
-import {TodoStore} from "./store/TodoStore";
 import * as actions from './store/actions';
 
 
@@ -31,28 +30,35 @@ export class TodoList {
     @Output()  toggleAll: EventEmitter<any> = new EventEmitter();
     @Output()  deleteTodo: EventEmitter<any> = new EventEmitter();
 
-    constructor(private store: TodoStore) {
+    constructor() {
 
     }
 
     onToggleAll() {
-        this.toggleAll.next(null);
+        //TODO
+        //this.toggleAll.next(null);
     }
 
     onToggleTodo(todo: Todo) {
+        //TODO
+        /*
         this.store.dispatch(actions.TOGGLE_TODO, todo)
             .subscribe(
                 res => console.log('TODO toggled successfully'),
                 error => console.log(`Error occurred: ${error} `)
             );;
+        */
     }
 
     delete(todo:Todo) {
+        // TODO
+        /*
         this.store.dispatch(actions.DELETE_TODO, todo)
             .subscribe(
                 res => console.log('TODO deleted successfully'),
                 error => console.log(`Error occurred: ${error} `)
             );
+            */
     }
 
 }
