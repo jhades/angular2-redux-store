@@ -1,10 +1,10 @@
 
-import {Observable} from 'angular2/angular2';
-import EventEmitter = NodeJS.EventEmitter;
+import {Observable, EventEmitter} from 'angular2/angular2';
+
 
 export class ReduxStore {
 
-    value: Observable = new EventEmitter();
+    value: Observable = <Observable>new EventEmitter();
 
     constructor(private store) {
         store.subscribe(() => this.value.next(this.getState()));

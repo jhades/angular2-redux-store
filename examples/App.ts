@@ -21,9 +21,9 @@ import {TodoStore} from "./store/TodoStore";
 
                 <todo-header (todo)="onAddTodo($event)"></todo-header>
 
-                <todo-list [todos]="store.state" (toggle-all)="onToggleAll()"></todo-list>
+                <todo-list [todos]="store.getState()" (toggle-all)="onToggleAll()"></todo-list>
 
-                <todo-footer [hidden]="store.state.size === 0" [count]="store.state.size" (clear)="onClear()"></todo-footer>
+                <todo-footer [hidden]="store.getState().size === 0" [count]="store.getState().size" (clear)="onClear()"></todo-footer>
 
             </section>
             <footer id="info">
@@ -34,7 +34,7 @@ import {TodoStore} from "./store/TodoStore";
 })
 export class App {
 
-    constructor(store: TodoStore) {
+    constructor(private store: TodoStore) {
         store.value.subscribe(
             state => console.log('new state received ' + JSON.stringify(state))
         );
