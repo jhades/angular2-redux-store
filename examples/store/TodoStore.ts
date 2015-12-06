@@ -3,7 +3,7 @@ import {Injectable} from 'angular2/angular2';
 import {createStore} from 'redux';
 import {todoReducers} from './todoReducers';
 import {List} from 'immutable';
-import {ReduxStore} from "./ReduxStore";
+import {ReduxStore} from "./../../src/ReduxStore";
 
 let store = createStore(todoReducers, List([]));
 
