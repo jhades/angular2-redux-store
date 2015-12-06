@@ -3,7 +3,7 @@ import {Observable, EventEmitter} from 'angular2/angular2';
 
 /**
  *
- * A minimalistic Redux store for Angular 2. This class is meant for demonstration purposes, as you can see there is
+ * A minimalistic Redux store for Angular 2. This class is meant mostly for demonstration purposes, as you can see there is
  * not much going on here.
  *
  * This class is meant to be sub-classed per project, and a redux store needs to be passed in the constructor.
