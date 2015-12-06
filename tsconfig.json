@@ -13,6 +13,7 @@
   "exclude": [
     "node_modules",
     "jspm_packages",
-    "build"
+    "build",
+    "typings"
   ]
 }

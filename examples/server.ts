@@ -1,5 +1,5 @@
 
-/// <reference path="../typings/node/node.d.ts"/>
+/// <reference path="../node_modules/angular2/typings/node/node.d.ts"/>
 
 let express = require('express');
 let bodyParser = require('body-parser');

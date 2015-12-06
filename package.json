@@ -12,7 +12,7 @@
   "author": "jhades.dev@gmail.com",
   "license": "MIT",
   "dependencies": {
-    "angular2": "2.0.0-alpha.47"
+    "angular2": "2.0.0-alpha.48"
   },
   "devDependencies": {
     "body-parser": "^1.14.1",
