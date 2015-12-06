@@ -2,6 +2,9 @@ import {Component,Input, NgFor, NgClass,Output, EventEmitter} from 'angular2/ang
 import {Todo} from "./Todo";
 import {List} from 'immutable';
 import * as actions from './store/actions/actions';
+import {TodoService} from "./TodoService";
+import {TodoStore} from "./store/TodoStore";
+import {toggleTodo, deleteTodo} from './store/todoActions';
 
 
 @Component({
@@ -29,30 +32,30 @@ export class TodoList {
     @Output()  toggleAll: EventEmitter<any> = new EventEmitter();
     @Output()  deleteTodo: EventEmitter<any> = new EventEmitter();
 
-    constructor() {
+    constructor(private todoService: TodoService, private store: TodoStore) {
 
     }
 
     onToggleTodo(todo: Todo) {
-        //TODO
-        /*
-        this.store.dispatch(actions.TOGGLE_TODO, todo)
+
+        this.store.dispatch(toggleTodo(todo));
+
+        this.todoService.toggleTodo(todo)
             .subscribe(
-                res => console.log('TODO toggled successfully'),
-                error => console.log(`Error occurred: ${error} `)
-            );;
-        */
+                res => console.log('todo toggled successfully'),
+                err => console.log('error toggling todo')
+            );
     }
 
     delete(todo:Todo) {
-        // TODO
-        /*
-        this.store.dispatch(actions.DELETE_TODO, todo)
+        this.store.dispatch(deleteTodo(todo));
+
+        this.todoService.deleteTodo(todo)
             .subscribe(
-                res => console.log('TODO deleted successfully'),
-                error => console.log(`Error occurred: ${error} `)
+                res => console.log('todo toggled successfully'),
+                err => console.log('error toggling todo')
             );
-            */
+
     }
 
 }

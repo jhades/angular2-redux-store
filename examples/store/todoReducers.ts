@@ -9,6 +9,10 @@ export function todoReducers(state: List<Todo>, action) {
             return List(action.todos);
         case ADD_TODO:
             return state.push(action.newTodo);
+        case TOGGLE_ALL:
+
+        case DELETE_TODO:
+            return state.delete(action.todo);
         default:
             return state;
     }
