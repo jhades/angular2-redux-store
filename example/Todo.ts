@@ -1,16 +1,17 @@
 
-import {ImmutableObject} from './ImmutableObject';
-import {List} from 'immutable';
+import {List,Record} from 'immutable';
 
-export class Todo extends ImmutableObject {
+const TodoRecord = Record({
+    id: 0,
+    description: "",
+    completed: false
+});
 
-    id:number;
-    description:string;
-    completed:boolean;
+export class Todo extends TodoRecord {
 
-    constructor(id: number, description:string, completed: boolean = false) {
-        super({id, description, completed});
+
+    constructor(props) {
+        super(props);
     }
-
 
 }

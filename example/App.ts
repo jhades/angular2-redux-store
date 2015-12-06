@@ -40,7 +40,8 @@ export class App {
         todoService.getAllTodos()
             .subscribe(
                 res => {
-                    let todos = res.json().map((todo) =>  new Todo(todo.id, todo.description, todo.completed));
+                    let todos = res.json().map((todo) =>
+                        new Todo({id:todo.id, description:todo.description,completed: todo.completed}));
 
                     store.dispatch(loadTodos(List(todos)));
                 },
@@ -53,7 +54,7 @@ export class App {
     }
 
     onAddTodo(description) {
-        let newTodo = new Todo(Math.random(), description);
+        let newTodo = new Todo({id:Math.random(), description});
 
         this.store.dispatch(addTodo(newTodo));
 

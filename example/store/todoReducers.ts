@@ -23,5 +23,5 @@ export function todoReducers(state: List<Todo>, action) {
 function toggleTodo(state, action) {
     let index = state.findIndex((todo) => todo.id === action.todo.id);
     let toggled:Todo = state.get(index);
-    return state.set(index, new Todo(toggled.id, toggled.description, !toggled.completed) );
+    return state.set(index, new Todo({id:toggled.id, description:toggled.description, completed:!toggled.completed}) );
 }
