@@ -1,7 +1,6 @@
 import {Component,Input, NgFor, NgClass,Output, EventEmitter} from 'angular2/angular2';
 import {Todo} from "./Todo";
 import {List} from 'immutable';
-import * as actions from './store/actions/actions';
 import {TodoService} from "./TodoService";
 import {TodoStore} from "./store/TodoStore";
 import {toggleTodo, deleteTodo} from './store/todoActions';

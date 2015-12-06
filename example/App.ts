@@ -40,7 +40,7 @@ export class App {
         todoService.getAllTodos()
             .subscribe(
                 res => {
-                    let todos = res.json().map((todo) =>
+                    todos = (<Object[]>res.json()).map((todo: any) =>
                         new Todo({id:todo.id, description:todo.description,completed: todo.completed}));
 
                     store.dispatch(loadTodos(List(todos)));

@@ -9,6 +9,9 @@ const TodoRecord = Record({
 
 export class Todo extends TodoRecord {
 
+    id:number;
+    description:string;
+    completed: boolean;
 
     constructor(props) {
         super(props);
