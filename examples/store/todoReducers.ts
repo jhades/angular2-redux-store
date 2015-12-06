@@ -15,10 +15,8 @@ export function todoReducers(state: List<Todo>, action) {
             let toggled:Todo = state.get(index);
             return state.set(index, new Todo(toggled.id, toggled.description, !toggled.completed) );
         case DELETE_TODO:
-
-            //TODO
-
-            return state.delete(action.todo);
+            let index = state.findIndex((todo) => todo.id === action.todo.id);
+            return state.delete(index);
         default:
             return state;
     }
