@@ -1,7 +1,8 @@
 
 import {List} from 'immutable';
 import {Todo} from "../Todo";
-import {ADD_TODO,CLEAR_ALL,DELETE_TODO,LOAD_TODOS, TOGGLE_ALL, TOGGLE_TODO} from './todoActions';
+import {ADD_TODO,DELETE_TODO,LOAD_TODOS, TOGGLE_TODO} from './todoActions';
+
 
 export function todoReducers(state: List<Todo>, action) {
     switch(action.type) {
@@ -9,9 +10,16 @@ export function todoReducers(state: List<Todo>, action) {
             return List(action.todos);
         case ADD_TODO:
             return state.push(action.newTodo);
-        case TOGGLE_ALL:
+        case TOGGLE_TODO:
+            let index = state.findIndex((todo) => todo.id === action.todo.id);
+            let toggled = state.get(index);
+
+            //TODO
 
         case DELETE_TODO:
+
+            //TODO
+
             return state.delete(action.todo);
         default:
             return state;
