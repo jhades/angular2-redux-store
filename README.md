@@ -5,7 +5,9 @@ A minimalistic Redux Store for building Angular 2 apps using a Flux-like one way
 
 Contains an example that shows how a Flux-like app can be built using Angular 2, Redux and Immutable.js. Shows how type-safety can still be kept while using Immutable.js in a Typescript enviromment.
 
-Check this post for a more detailed explanation - [Angular 2 Application Architecture -Building Flux-like apps using Redux and Immutability.js](TODO)
+Check this post for a more detailed explanation:
+
+[Angular 2 Application Architecture -Building Flux-like apps using Redux and Immutability.js](TODO)
 
 
 ### The Gist
