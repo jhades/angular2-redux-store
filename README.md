@@ -5,9 +5,12 @@ A minimalistic Redux Store for building Angular 2 apps using a Flux-like one way
 
 Contains an example that shows how a Flux-like app can be built using Angular 2, Redux and Immutable.js. Shows how type-safety can still be kept while using Immutable.js in a Typescript enviromment.
 
+Check this post for a more detailed explanation - [Angular 2 Application Architecture -Building Flux-like apps using Redux and Immutability.js](TODO)
+
+
 ### The Gist
 
-Redux makes for a really good fit for building Apps in Angular 2. The idea of building apps using a Flux-like architecture is to isolate the state of the application inside a single store, so we can better control it. 
+Redux makes for a really good fit for building Apps in Angular 2. The idea of building apps using a Flux-like architecture is to isolate the state of the application inside a store, so we can better control it. 
 
 Redux provides a very intuitive and easy data store that is getting a lot of traction. We just need a way to conveniently use it in an Angular 2 app, and that's when the Angular 2 Redux Store comes in to help.
 
@@ -16,6 +19,8 @@ Redux provides a very intuitive and easy data store that is getting a lot of tra
 To add a redux store to an Angular 2 app, simply do this:
 
 ```js
+import {ReduxStore} from "ng2-redux-store";
+
 let store = createStore(todoReducers, List([]));
 
 @Injectable()
@@ -62,9 +67,22 @@ todoStore.value.subscribe(
 ```
 With this the user received a stream of store values that can be processed all the power of the functional reactive programming primitives provided by the RxJs Observables library used by Angular.
 
+### Using the Angular 2 Redux Store
 
+You can install this library and include it as a dependency, together with Angular 2 and Redux:
 
+    npm install -S angular2 redux angular2-redux-store
+    
+### Running the sample app
 
+This project contains a sample Todo app built using Angular 2, Redux and this library. To run it, open a terminal and run:
 
+    npm run watch
+    
+Then open a second terminal and run:
 
+    npm start
+    
+### Redux and Immutability
+Altough redux does not enforce any immutability library, its important to use one so that we have the strong guarantee that the state that comes out of the store cannot be tampered with in any way by the component tree. 
 
