@@ -12,7 +12,7 @@ Check this post for a more detailed explanation:
 
 ### The Gist
 
-Redux makes for a really good fit for building Apps in Angular 2. The idea of building apps using a Flux-like architecture is to isolate the state of the application inside a store, so we can better control it. 
+Redux makes for a really good fit for building Apps in Angular 2. The idea of building apps using a Flux-like architecture is to isolate the state of the application inside a store, so we can better control it. The [redux docs](http://redux.js.org/) are a great reference point for understanding the Flux architecture.
 
 Redux provides a very intuitive and easy data store that is getting a lot of traction. We just need a way to conveniently use it in an Angular 2 app, and that's when the Angular 2 Redux Store comes in to help.
 
