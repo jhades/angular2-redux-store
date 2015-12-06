@@ -88,3 +88,26 @@ Then open a second terminal and run:
 ### Redux and Immutability
 Altough redux does not enforce any immutability library, its important to use one so that we have the strong guarantee that the state that comes out of the store cannot be tampered with in any way by the component tree. 
 
+This library does not impose any specific library either. But have a look at immutability.js as with it its possible to define classes that are immutable and still keep the benefits of type-safety in a Typescript environment. This is how an immutable Todo class can be defined:
+
+```js
+import {List,Record} from 'immutable';
+
+const TodoRecord = Record({
+    id: 0,
+    description: "",
+    completed: false
+});
+
+export class Todo extends TodoRecord {
+
+    id:number;
+    description:string;
+    completed: boolean;
+
+    constructor(props) {
+        super(props);
+    }
+}
+```
+
