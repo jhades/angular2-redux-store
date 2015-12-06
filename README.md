@@ -61,7 +61,7 @@ export class TodoList {
 
 ### How the The Redux API is exposed
 
-a redux store has a minimal API of 3 methods: getState(), dispatch() and subscribe. The TodoStore in this example exposes two of those methods directly: getState() and dispatch(). These two methods are delegated directly to the flux store.
+A redux store has an API made of 3 methods: getState(), dispatch() and subscribe(). The TodoStore in this example exposes two of those methods directly: getState() and dispatch(). These two methods are delegated directly to the flux store.
 
 For the subscribe functionality,  in an similar way to the Angular 2 Forms API and other parts of Agnular an observable is exposed that the user can subscribe to:
 
