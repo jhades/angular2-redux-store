@@ -7,7 +7,7 @@
     "build": "rm -rf build && mkdir build && tsc || true",
     "postinstall": "npm run build && jspm install",
     "watch": "rm -rf build && mkdir build && tsc -w",
-    "start": "node build/server.js"
+    "start": "node build/examples/server.js"
   },
   "author": "jhades.dev@gmail.com",
   "license": "MIT",
