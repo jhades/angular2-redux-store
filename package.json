@@ -1,8 +1,8 @@
 {
-  "name": "ng2-store",
+  "name": "angular2-redux-store",
   "version": "1.0.0",
-  "description": "An Easy to use Data Store for Angular 2",
-  "main": "build/ng2-store.js",
+  "description": "A minimalistic Redux store for Angular 2",
+  "main": "index.js",
   "scripts": {
     "build": "rm -rf build && mkdir build && tsc || true",
     "postinstall": "npm run build && jspm install",
