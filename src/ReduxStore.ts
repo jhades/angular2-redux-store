@@ -22,7 +22,7 @@ import {Observable, EventEmitter} from 'angular2/angular2';
 export abstract class ReduxStore {
 
     static initialized = false;
-    value: Observable = <Observable>new EventEmitter();
+    value: Observable<any> = <Observable<any>>new EventEmitter();
 
     constructor(private store) {
         if (!store) {
