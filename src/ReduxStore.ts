@@ -11,11 +11,11 @@ import {Observable, EventEmitter} from 'angular2/angular2';
  * This class then needs to be passed to the root bootstrap call of the application, so that the store can be
  * injected in any part of the application that needs it.
  *
- * The redux API for methods getState() and dispatch is exposed directly.
+ * The redux API for methods getState() and dispatch are exposed directly.
  *
  * The remaining redux API method subscribe() is not exposed, instead an observable is made available.
  *
- * The user can subscribe to store value changes using store.value.subscribe().
+ * The user can subscribe to the store value changes by using store.value.subscribe().
  *
  */
 
