@@ -11,14 +11,17 @@ export function todoReducers(state: List<Todo>, action) {
         case ADD_TODO:
             return state.push(action.newTodo);
         case TOGGLE_TODO:
-            let index = state.findIndex((todo) => todo.id === action.todo.id);
-            let toggled:Todo = state.get(index);
-            return state.set(index, new Todo(toggled.id, toggled.description, !toggled.completed) );
+            return toggleTodo(state, action);
         case DELETE_TODO:
             let index = state.findIndex((todo) => todo.id === action.todo.id);
             return state.delete(index);
         default:
             return state;
     }
+}
 
+function toggleTodo(state, action) {
+    let index = state.findIndex((todo) => todo.id === action.todo.id);
+    let toggled:Todo = state.get(index);
+    return state.set(index, new Todo(toggled.id, toggled.description, !toggled.completed) );
 }
