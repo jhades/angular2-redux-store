@@ -50,8 +50,11 @@ The redux store can now be injected in any part of the app that needs it:
 ```js
 export class TodoList {
 
-    constructor(store: TodoStore) {
-
+    constructor(private store: TodoStore) {
+    }
+    
+    toggleTodo(todo) {
+        this.store.dispatch(toggleTodo(todo));
     }
 }
 ```
