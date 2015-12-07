@@ -3,8 +3,8 @@
 
 A minimalistic Redux Store for building Angular 2 apps using the Flux one-way binding architecture.
 
-- contains an example on how a Flux app can be built using Angular 2, Redux and Immutable.js 
-- shows how type-safe immutable classes can be done using Immutable.js in a Typescript enviromment.
+- contains an example of a Flux app built in Angular 2, Redux and Immutable.js 
+- shows how type-safe immutable classes are possible using Immutable.js in a Typescript enviromment.
 
 Check this post for a more detailed explanation:
 
