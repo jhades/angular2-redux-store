@@ -1,4 +1,4 @@
-import {Component,Input, NgFor, NgClass,Output, EventEmitter} from 'angular2/angular2';
+import {Component,Input, NgFor, NgClass,Output, EventEmitter,ChangeDetectionStrategy} from 'angular2/angular2';
 import {Todo} from "./Todo";
 import {List} from 'immutable';
 import {TodoService} from "./TodoService";
@@ -9,6 +9,7 @@ import {toggleTodo, deleteTodo} from './store/todoActions';
 @Component({
     selector: 'todo-list',
     directives: [NgFor, NgClass],
+    changeDetection: ChangeDetectionStrategy.OnPush,
     template: `
 
         <section id="main" [hidden]="todos.size === 0">
