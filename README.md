@@ -1,5 +1,5 @@
 
-# Angular2 Redux Store
+# Angular2 ReduxStore
 
 A minimalistic Redux Store for building Angular 2 apps using a Flux-like one way binding architecture.
 
@@ -16,7 +16,7 @@ Redux makes for a really good fit for building applications in Angular 2. The id
 
 Redux provides a very intuitive and easy to use data store that is getting a lot of traction. We just need a way to conveniently use it in an Angular 2 app, and that's where the Angular 2 Redux Store comes in.
 
-### The Angular 2 Redux Store
+### The Angular 2 ReduxStore
 
 To add a redux store to an Angular 2 app, simply do this:
 
@@ -93,7 +93,7 @@ Then open a second terminal and run:
 ### Redux and Immutability
 Altough redux does not enforce any immutability library, its important to use one so that we have the strong guarantee that the state that comes out of the store cannot be tampered with in any way by the component tree. 
 
-This library does not impose any specific immutability library either. But have a look at immutability.js as with it its possible to define classes that are immutable and still keep the benefits of type-safety in a Typescript environment. This is how an immutable Todo class can be defined:
+ReduxStore does not impose any specific immutability library either. But have a look at immutability.js as with it its possible to define classes that are immutable and still keep the benefits of type-safety in a Typescript environment. This is how an immutable Todo class can be defined:
 
 ```js
 import {List,Record} from 'immutable';
