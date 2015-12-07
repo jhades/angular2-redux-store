@@ -1,5 +1,5 @@
 
-# Angular2 ReduxStore
+# Angular2 Redux Store
 
 A minimalistic Redux Store for building Angular 2 apps using a Flux-like one way binding architecture.
 
@@ -74,9 +74,9 @@ todoStore.value.subscribe(
 ```
 With this the user receives a stream of store values that can be processed over time, with all the power of the functional reactive programming primitives provided by the RxJs Observables library used by Angular.
 
-### Using the Angular 2 Redux Store
+### Using the Angular 2 ReduxStore
 
-You can install this library and include it as a dependency, together with Angular 2 and Redux:
+You can install the ReduxStore library and include it as a dependency, together with Angular 2 and Redux:
 
     npm install -S angular2 redux angular2-redux-store
     
@@ -93,7 +93,7 @@ Then open a second terminal and run:
 ### Redux and Immutability
 Altough redux does not enforce any immutability library, its important to use one so that we have the strong guarantee that the state that comes out of the store cannot be tampered with in any way by the component tree. 
 
-ReduxStore does not impose any specific immutability library either. But have a look at immutability.js as with it its possible to define classes that are immutable and still keep the benefits of type-safety in a Typescript environment. This is how an immutable Todo class can be defined:
+ReduxStore does not impose any specific immutability library either. But have a look at immutability.js as with it its possible to define classes that are immutable and still keep the benefits of type-safety in a Typescript environment. For example, this is how an immutable Todo class can be defined:
 
 ```js
 import {List,Record} from 'immutable';
