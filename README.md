@@ -7,7 +7,7 @@ Contains an example that shows how a Flux-like app can be built using Angular 2,
 
 Check this post for a more detailed explanation:
 
-[Angular 2 Application Architecture -Building Flux-like apps using Redux and Immutability.js](TODO)
+[Angular 2 Application Architecture -Building Flux-like apps using Redux and Immutable.js](TODO)
 
 
 ### The Gist
@@ -93,7 +93,7 @@ Then open a second terminal and run:
 ### Redux and Immutability
 Altough redux does not enforce any immutability library, its important to use one so that we have the strong guarantee that the state that comes out of the store cannot be tampered with in any way by the component tree. 
 
-ReduxStore does not impose any specific immutability library either. But have a look at immutability.js as with it its possible to define classes that are immutable and still keep the benefits of type-safety in a Typescript environment. For example, this is how an immutable Todo class can be defined:
+ReduxStore does not impose any specific immutability library either. But have a look at immutable.js as with it its possible to define classes that are immutable and still keep the benefits of type-safety in a Typescript environment. For example, this is how an immutable Todo class can be defined:
 
 ```js
 import {List,Record} from 'immutable';
