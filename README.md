@@ -59,6 +59,8 @@ export class TodoList {
 }
 ```
 
+The toggleTodo method is an example of an action creator, see the [redux documentation](http://redux.js.org/docs/basics/Actions.html) for more details.
+
 ### How the The Redux API is exposed
 
 A redux store has an API made of 3 methods: getState(), dispatch() and subscribe(). The TodoStore in this example exposes two of those methods directly: getState() and dispatch(). These two methods are delegated directly to the flux store.
