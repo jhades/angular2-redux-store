@@ -22,7 +22,7 @@ Redux provides a very intuitive and easy to use data store that is getting a lot
 To add a redux store to an Angular 2 app, simply do this:
 
 ```js
-import {ReduxStore} from "ng2-redux-store";
+import {ReduxStore} from "angular2-redux-store";
 
 let store = createStore(todoReducers, List([]));
 
