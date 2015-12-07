@@ -1,28 +1,20 @@
 
-import {Observable, EventEmitter} from 'angular2/angular2';
-
 /**
  *
- * A minimalistic Redux store for Angular 2. This class is meant mostly for demonstration purposes, as you can see there is
- * not much going on here.
+ * A minimalistic Redux store for Angular 2. This class is meant to demonstrate how Redux can be integrated with Angular 2.
  *
  * This class is meant to be sub-classed per project, and a redux store needs to be passed in the constructor.
  *
  * This class then needs to be passed to the root bootstrap call of the application, so that the store can be
  * injected in any part of the application that needs it.
  *
- * The redux API for methods getState() and dispatch are exposed directly.
- *
- * The remaining redux API method subscribe() is not exposed, instead an observable is made available.
- *
- * The user can subscribe to the store value changes by using store.value.subscribe().
+ * The redux API methods getState(), dispatch() and subscribe() are exposed directly.
  *
  */
 
 export abstract class ReduxStore {
 
     static initialized = false;
-    value: Observable<any> = <Observable<any>>new EventEmitter();
 
     constructor(private store) {
         if (!store) {
@@ -32,7 +24,6 @@ export abstract class ReduxStore {
             throw new Error('Only one redux store can exist per application.');
         }
         ReduxStore.initialized = true;
-        store.subscribe(() => this.value.next(this.getState()));
     }
 
     getState() {
@@ -41,6 +32,10 @@ export abstract class ReduxStore {
 
     dispatch(action) {
         this.store.dispatch(action);
+    }
+
+    subscribe(listener: Function) {
+        this.store.subscribe(() => listener(this.getState()));
     }
 
 }

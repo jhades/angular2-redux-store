@@ -48,7 +48,7 @@ export class App {
                 err => console.log("Error retrieving Todos")
             );
 
-        store.value.subscribe(
+        store.subscribe(
             state => console.log('new state received ' + JSON.stringify(state))
         );
     }
