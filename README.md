@@ -17,7 +17,7 @@ Redux makes for a really good fit for building applications in Angular 2. The id
 
 Redux provides a very intuitive and easy to use data store that is getting a lot of traction. We just need a way to conveniently use it in an Angular 2 app, and that's where the Angular 2 Redux Store comes in.
 
-### The Angular 2 ReduxStore
+### The Angular 2 Redux Store
 
 To add a redux store to an Angular 2 app, simply do this:
 
@@ -64,7 +64,7 @@ The toggleTodo method is an example of an action creator, see the [redux documen
 
 ### How the The Redux API is exposed
 
-The redux store API has 3 methods: getState(), dispatch() and subscribe(). The ReduxStore exposes two of those methods directly: getState() and dispatch(). These methods are delegated directly to the redux store.
+The redux store API has 3 methods: getState(), dispatch() and subscribe(). ReduxStore exposes two of those methods directly: getState() and dispatch(). These methods are delegated directly to the redux store.
 
 For the subscribe functionality, observable is exposed that the user can subscribe to. This is  to what happens in the Angular 2 Forms API and other parts of Angular in general:
 
@@ -75,9 +75,9 @@ todoStore.value.subscribe(
 ```
 With this the user receives a stream of store values that can be processed over time, with all the power of the functional reactive programming primitives provided by the RxJs Observables library used by Angular.
 
-### Using the Angular 2 ReduxStore
+### Using the Angular 2 Redux Store
 
-You can install the ReduxStore library and include it as a dependency, together with Angular 2 and Redux:
+You can install ReduxStore and include it as a dependency, together with Angular 2 and Redux:
 
     npm install -S angular2 redux angular2-redux-store
     
