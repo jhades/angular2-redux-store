@@ -63,7 +63,7 @@ The toggleTodo method is an example of an action creator, see the [redux documen
 
 ### How the The Redux API is exposed
 
-A redux store has an API made of 3 methods: getState(), dispatch() and subscribe(). The TodoStore in this example exposes two of those methods directly: getState() and dispatch(). These two methods are delegated directly to the flux store.
+The redux store API has 3 methods: getState(), dispatch() and subscribe(). The TodoStore in this example exposes two of those methods directly: getState() and dispatch(). These two methods are delegated directly to the flux store.
 
 For the subscribe functionality,  in an similar way to the Angular 2 Forms API and other parts of Agnular an observable is exposed that the user can subscribe to:
 
