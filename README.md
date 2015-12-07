@@ -5,7 +5,8 @@ A minimalistic Redux Store for building Angular 2 apps using the Flux one-way bi
 
 Check this post for a more detailed explanation:
 
-[Angular 2 Application Architecture -Building Flux-like apps using Redux and Immutable.js](TODO)
+[Angular 2 Application Architecture -Building Flux-like apps using Redux and Immutable.js](http://blog.jhades.org/angular-2-application-architecture-building-flux-like-apps-using-redux-and-immutable-js-js/)
+
 
 
 ### The Gist
