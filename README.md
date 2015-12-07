@@ -59,18 +59,20 @@ export class TodoList {
 
 The toggleTodo method is an example of an action creator, see the [redux documentation](http://redux.js.org/docs/basics/Actions.html) for more details.
 
-### How the The Redux API is exposed
+###  The Redux Store API 
 
-The redux store API has 3 methods: getState(), dispatch() and subscribe(). ReduxStore exposes two of those methods directly: getState() and dispatch(). These methods are delegated directly to the redux store.
-
-For the subscribe functionality, observable is exposed that the user can subscribe to. This is  to what happens in the Angular 2 Forms API and other parts of Angular in general:
+The ReduxStore API has the same 3 methods as a redux store: getState(), dispatch() and subscribe(): 
 
 ```js
-todoStore.value.subscribe(
+let currentState = todoStore.getState() // returns the current state of the store
+
+todoStore.dispatch(action); // dispatches an action to the store
+
+// adds a state change listener
+todoStore.subscribe(
    state => console.log('Received new store state: ' + state);
 );
 ```
-With this the user receives a stream of store values that can be processed over time, with all the power of the functional reactive programming primitives provided by the RxJs Observables library used by Angular.
 
 ### Using the Angular 2 Redux Store
 
