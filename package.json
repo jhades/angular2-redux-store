@@ -10,6 +10,7 @@
     "start": "node build/example/server.js"
   },
   "author": "jhades.dev@gmail.com",
+  "url": "https://github.com/jhades/angular2-redux-store",
   "license": "MIT",
   "dependencies": {
     "angular2": "2.0.0-alpha.48"
