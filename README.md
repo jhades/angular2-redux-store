@@ -65,9 +65,11 @@ The toggleTodo method is an example of an action creator, see the [redux documen
 The ReduxStore API has the same 3 methods as a redux store: getState(), dispatch() and subscribe(): 
 
 ```js
-let currentState = todoStore.getState() // returns the current state of the store
+// returns the current state of the store
+let currentState = todoStore.getState() 
 
-todoStore.dispatch(action); // dispatches an action to the store
+// dispatches an action to the store
+todoStore.dispatch(action); 
 
 // adds a state change listener
 todoStore.subscribe(
