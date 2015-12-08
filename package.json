@@ -2,6 +2,7 @@
   "name": "angular2-redux-store",
   "version": "1.0.3",
   "description": "A minimalistic Redux store for Angular 2",
+  "homepage": "https://github.com/jhades/angular2-redux-store",
   "main": "index.js",
   "scripts": {
     "build": "rm -rf build && mkdir build && tsc || true",
@@ -12,6 +13,10 @@
   "author": "jhades.dev@gmail.com",
   "url": "https://github.com/jhades/angular2-redux-store",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jhades/angular2-redux-store.git"
+  },
   "dependencies": {
     "angular2": "2.0.0-alpha.48"
   },
