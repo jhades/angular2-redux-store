@@ -1,13 +1,12 @@
 
 # Angular2 Redux Store
 
+[![npm version](https://img.shields.io/npm/v/angular2-redux-store.svg?style=flat-square)](https://www.npmjs.com/package/angular2-redux-store)
 A minimalistic Redux Store for building Angular 2 apps using the Flux one-way binding architecture.
 
 Check this post for a more detailed explanation:
 
 [Angular 2 Application Architecture -Building Flux-like apps using Redux and Immutable.js](http://blog.jhades.org/angular-2-application-architecture-building-flux-like-apps-using-redux-and-immutable-js-js/)
-
-[![npm version](https://img.shields.io/npm/v/angular2-redux-store.svg?style=flat-square)](https://www.npmjs.com/package/angular2-redux-store)
 
 ### The Gist
 
