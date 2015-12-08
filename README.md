@@ -26,9 +26,11 @@ let store = createStore(todoReducers, List([]));
 
 @Injectable()
 export class TodoStore extends ReduxStore {
+    
     constructor() {
         super(store);
     }
+    
 }
 ```
 
@@ -46,8 +48,10 @@ The redux store can now be injected in any part of the app that needs it:
 
 ```js
 export class TodoList {
+
     constructor(private store: TodoStore) {
     }
+    
     toggleTodo(todo) {
         this.store.dispatch(toggleTodo(todo));
     }
