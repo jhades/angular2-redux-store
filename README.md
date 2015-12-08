@@ -119,6 +119,9 @@ export class Todo extends TodoRecord {
     }
 }
 ```
+This is based on the immutable.js [Record](https://facebook.github.io/immutable-js/docs/#/Record), which allows to create an immutable object with an allowed set of keys. 
+
+The Todo class is both immuttable and type-safe, meaning its possible to autocomplete its properties and have it's usage type-checked by the Typescript compiler.
 
 ### License
 
