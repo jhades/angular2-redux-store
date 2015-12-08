@@ -66,7 +66,7 @@ The ReduxStore API has the same 3 methods as a redux store: getState(), dispatch
 
 ```js
 // returns the current state of the store
-let currentState = todoStore.getState() 
+let currentState = todoStore.getState();
 
 // dispatches an action to the store
 todoStore.dispatch(action); 
