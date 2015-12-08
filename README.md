@@ -1,5 +1,5 @@
 
-# Angular2 Redux Store
+# Angular 2 Redux Store
 
 [![npm version](https://img.shields.io/npm/v/angular2-redux-store.svg?style=flat-square)](https://www.npmjs.com/package/angular2-redux-store)
 
