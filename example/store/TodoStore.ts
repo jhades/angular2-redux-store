@@ -6,7 +6,9 @@ import {List} from 'immutable';
 import createLogger from 'redux-logger';
 import {ReduxStore} from "./../../src/ReduxStore";
 
-const logger = createLogger();
+const logger = createLogger({
+    stateTransformer: (state) => state.toJS()
+});
 const createStoreWithMiddleware = applyMiddleware(logger)(createStore);
 const store = createStoreWithMiddleware(todoReducers, List([]));
 
