@@ -28,6 +28,7 @@ import {List} from 'immutable';
 
             </section>
             <footer id="info">
+                <p>Ready</p>
                 <p>Add, Remove and Complete TODOs</p>
             </footer>
         </div>
