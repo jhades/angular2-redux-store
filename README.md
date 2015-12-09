@@ -3,7 +3,7 @@
 
 [![npm version](https://img.shields.io/npm/v/angular2-redux-store.svg?style=flat-square)](https://www.npmjs.com/package/angular2-redux-store)
 
-A minimalistic Redux Store for building Angular 2 apps using the Flux unidirectional data flow architecture.
+A minimalistic Redux Store for building Angular 2 apps using the Flux architecture.
 
 Check this post for a more detailed explanation:
 
