@@ -49,7 +49,7 @@ export class App {
             );
 
         store.subscribe(
-            state => console.log('new state received ' + JSON.stringify(state))
+            state => console.log('new state received ')
         );
     }
 

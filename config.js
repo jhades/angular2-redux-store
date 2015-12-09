@@ -18,6 +18,7 @@ System.config({
     "core-js": "npm:core-js@1.2.6",
     "immutable": "npm:immutable@3.7.5",
     "redux": "npm:redux@3.0.4",
+    "redux-logger": "npm:redux-logger@2.1.4",
     "reflect-metadata": "npm:reflect-metadata@0.1.2",
     "github:jspm/nodelibs-assert@0.1.0": {
       "assert": "npm:assert@1.3.0"
