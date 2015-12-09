@@ -34,9 +34,7 @@ export class TodoStore extends ReduxStore {
 }
 ```
 
-You can create the store anyway you like, using any of the Redux middleware available such as [logging](https://github.com/fcomb/redux-logger) or the [devtools](https://github.com/gaearon/redux-devtools). 
-
-In this case only a simple store is created. A TodoStore class is created, that needs to be added to the root boostrap call of the app:
+You can create the store anyway you like, using any of the Redux middleware available such as [logging](https://github.com/fcomb/redux-logger) or the [devtools](https://github.com/gaearon/redux-devtools). In this case only a simple store is created. A TodoStore class is created, that needs to be added to the root boostrap call of the app:
 
 ```js
 bootstrap(App, [
