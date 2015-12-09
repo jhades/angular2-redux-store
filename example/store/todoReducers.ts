@@ -46,7 +46,10 @@ function uiState(state: List<Todo>, action) {
             };
         case BACKEND_ACTION_FINISHED:
             default:
-            return initialUiState;
+            return {
+                actionOngoing: false,
+                message: action.message ? action.message : initialUiState.message
+            };
     }
 }
 

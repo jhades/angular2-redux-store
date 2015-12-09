@@ -30,13 +30,11 @@ app.route('/todo')
         todos = _.remove(todos,(todo) => todo.id != req.query.id );
         console.log(JSON.stringify(todos));
         setTimeout(() => res.send(), 2000);
-        res.send();
     })
     .post((req, res) => {
         todos.push(req.body);
         console.log(JSON.stringify(todos));
-        setTimeout(() => res.send(), 2000);
-        res.send();
+        setTimeout(() => res.send(), 500);
     });
 
 let server = app.listen(8080, function() {

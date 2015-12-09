@@ -10,7 +10,7 @@ import {Todo} from "./Todo";
 import {Footer} from "./Footer";
 import {TodoService} from "./TodoService";
 import {TodoStore} from "./store/TodoStore";
-import {loadTodos, addTodo} from './store/todoActions';
+import {loadTodos, addTodo,startBackendAction, endBackendAction} from './store/todoActions';
 import {List} from 'immutable';
 
 @Component({
@@ -57,12 +57,17 @@ export class App {
     onAddTodo(description) {
         let newTodo = new Todo({id:Math.random(), description});
 
-        this.store.dispatch(addTodo(newTodo));
+        this.store.dispatch(startBackendAction('Saving Todo...'));
 
         this.todoService.saveTodo(newTodo)
             .subscribe(
-                res => console.log('Todo saved successfully'),
-                err => console.log('Todo not saved, show error message')
+                res => {
+                    this.store.dispatch(addTodo(newTodo));
+                    this.store.dispatch(endBackendAction());
+                },
+                err => {
+                    this.store.dispatch(endBackendAction('Error occurred: '));
+                }
             );
     }
 

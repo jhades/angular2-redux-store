@@ -45,7 +45,7 @@ export function startBackendAction(message: string) {
     }
 }
 
-export function endBackendAction() {
+export function endBackendAction(message:string = '') {
     return {
         type: BACKEND_ACTION_FINISHED
     }
