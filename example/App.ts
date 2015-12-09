@@ -22,13 +22,13 @@ import {List} from 'immutable';
 
                 <todo-header (todo)="onAddTodo($event)"></todo-header>
 
-                <todo-list [todos]="store.getState()"></todo-list>
+                <todo-list [todos]="store.getState().todos"></todo-list>
 
-                <todo-footer [hidden]="store.getState().size === 0" [count]="store.getState().size"></todo-footer>
+                <todo-footer [hidden]="store.getState().todos.size === 0" [count]="store.getState().todos.size"></todo-footer>
 
             </section>
             <footer id="info">
-                <p>Ready</p>
+                <p>{{store.getState().uiState.message}}</p>
                 <p>Add, Remove and Complete TODOs</p>
             </footer>
         </div>
