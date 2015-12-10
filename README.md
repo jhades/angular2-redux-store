@@ -11,7 +11,7 @@ Check this post for a more detailed explanation:
 
 ### The Gist
 
-Redux makes for a really good fit for building applications in Angular 2. The idea of building apps using a Flux-like architecture is to isolate the state of the application inside a store, so we can better control it. The [redux docs](http://redux.js.org/) are a great reference point for understanding Flux.
+Redux makes for a really good fit for building applications in Angular 2. The idea of building apps using a Flux-like architecture is to isolate the state of the application inside a store, so we can better control it. The [redux docs](http://redux.js.org/) are a great reference for learning Flux.
 
 Redux provides a very intuitive and easy to use data store that is getting a lot of traction. We just need a way to conveniently use it in an Angular 2 app, and that's where the Angular 2 Redux Store comes in.
 
@@ -95,13 +95,13 @@ Then open a second terminal and run:
 
     npm start
     
-### Redux and Immutability
+### Redux,  Immutability and Type Safety
 Altough redux does not enforce any immutability library, its important to use one so that we have the strong guarantee that the state that comes out of the store cannot be tampered with in any way by the component tree. 
 
-ReduxStore does not impose any specific immutability library either. But have a look at immutable.js as with it its possible to define classes that are immutable and still keep the benefits of type-safety in a Typescript environment. For example, this is how an immutable Todo class can be defined:
+To achieve this, have a look at immutable.js. With it its possible to define classes that are immutable and still keep the benefits of type-safety in a Typescript environment. For example, this is how an immutable Todo class can be defined:
 
 ```js
-import {List,Record} from 'immutable';
+import {Record} from 'immutable';
 
 const TodoRecord = Record({
     id: 0,
