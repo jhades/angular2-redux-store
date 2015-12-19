@@ -5,9 +5,9 @@
   "homepage": "https://github.com/jhades/angular2-redux-store",
   "main": "index.js",
   "scripts": {
-    "build": "rm -rf build && mkdir build && tsc || true",
-    "postinstall": "npm run build && jspm install",
-    "watch": "rm -rf build && mkdir build && tsc -w",
+    "build": "rm -rf build && mkdir build && ./node_modules/.bin/tsc || true",
+    "postinstall": "npm run build && ./node_modules/.bin/jspm install",
+    "watch": "rm -rf build && mkdir build && ./node_modules/.bin/tsc -w",
     "start": "node build/example/server.js"
   },
   "author": "jhades.dev@gmail.com",
@@ -37,7 +37,6 @@
       "babel": "npm:babel-core@^5.8.24",
       "babel-runtime": "npm:babel-runtime@^5.8.24",
       "core-js": "npm:core-js@^1.1.4",
-      "immutable": "npm:immutable@^3.7.5",
       "reflect-metadata": "npm:reflect-metadata@^0.1.2"
     }
   }
