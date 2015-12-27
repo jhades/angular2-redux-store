@@ -13,11 +13,11 @@ System.config({
   },
 
   map: {
+    "angular2-redux-store": "npm:angular2-redux-store@1.0.7",
     "babel": "npm:babel-core@5.8.33",
     "babel-runtime": "npm:babel-runtime@5.8.29",
     "core-js": "npm:core-js@1.2.6",
     "immutable": "npm:immutable@3.7.5",
-    "jhades/angular2-redux-store": "github:jhades/angular2-redux-store@master",
     "redux": "npm:redux@3.0.4",
     "redux-logger": "npm:redux-logger@2.1.4",
     "reflect-metadata": "npm:reflect-metadata@0.1.2",

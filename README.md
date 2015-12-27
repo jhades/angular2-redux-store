@@ -83,18 +83,16 @@ todoStore.subscribe(
 
 You can install ReduxStore and include it as a dependency, together with Angular 2 and Redux:
 
-    npm install -S angular2 redux angular2-redux-store
-    
-### Running the sample app
+    npm install -S angular2-redux-store
 
-This project contains a sample Todo app built using Angular 2, Redux and this library. To run it, open a terminal and run:
+A lot of the current Angular 2 examples use SystemJs. If you want to consume this library using Jspm/SystemJs, first install jspm globally:
 
-    npm run watch
-    
-Then open a second terminal and run:
+    npm install -g jspm
 
-    npm start
-    
+Then install angular2-redux-store like this:
+
+     jspm install npm:angular2-redux-store
+
 ### Redux,  Immutability and Type Safety
 Altough redux does not enforce any immutability library, its important to use one so that we have the strong guarantee that the state that comes out of the store cannot be tampered with in any way by the component tree. 
 
@@ -123,6 +121,20 @@ export class Todo extends TodoRecord {
 This is based on the immutable.js [Record](https://facebook.github.io/immutable-js/docs/#/Record), which allows to create an immutable object with an allowed set of keys. 
 
 The Todo class is both immuttable and type-safe, meaning its possible to autocomplete its properties and have it's usage type-checked by the Typescript compiler.
+
+### Running the sample app
+
+This project contains a sample Todo app built using Angular 2, Redux and this library. To run it, open a terminal and run:
+
+    npm install -g jspm
+    cd example
+    npm install
+    npm run watch
+
+Then open a second terminal and run:
+
+    npm start
+
 
 ### License
 

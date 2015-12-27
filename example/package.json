@@ -5,9 +5,9 @@
   "homepage": "https://github.com/jhades/angular2-redux-store",
   "main": "index.js",
   "scripts": {
-    "build": "rm -rf build && tsc -p ./src || true",
+    "build": "rm -rf build && tsc -p src || true",
     "postinstall": "npm run build && jspm install",
-    "watch": "rm -rf build && mkdir build && tsc -p ./src -w",
+    "watch": "rm -rf build && mkdir build && tsc -p src -w",
     "start": "node build/server.js"
   },
   "author": "jhades.dev@gmail.com",
@@ -25,13 +25,12 @@
     "express": "^4.13.3",
     "jspm": "^0.16.14",
     "lodash": "^3.10.1",
-    "typescript": "^1.7.3",
-    "angular2-redux-store": "^1.0.0"
+    "typescript": "^1.7.3"
   },
   "jspm": {
     "dependencies": {
+      "angular2-redux-store": "npm:angular2-redux-store@^1.0.7",
       "immutable": "npm:immutable@^3.7.5",
-      "jhades/angular2-redux-store": "github:jhades/angular2-redux-store@master",
       "redux": "npm:redux@^3.0.4",
       "redux-logger": "npm:redux-logger@^2.1.4"
     },
