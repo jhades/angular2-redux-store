@@ -85,7 +85,9 @@ You can install ReduxStore and include it as a dependency, together with Angular
 
     npm install -S angular2-redux-store
 
-A lot of the current Angular 2 examples use SystemJs. If you want to consume this library using Jspm/SystemJs, first install jspm globally:
+This installs a CommonJs version of the library in node_modules, ready to be consumed by Webpack or SystemJs.
+
+If you want to consume this library using Jspm, first install jspm globally:
 
     npm install -g jspm
 
