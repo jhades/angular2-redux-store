@@ -5,10 +5,10 @@
   "homepage": "https://github.com/jhades/angular2-redux-store",
   "main": "index.js",
   "scripts": {
-    "build": "rm -rf build && mkdir build && tsc || true",
+    "build": "rm -rf build && tsc -p ./src || true",
     "postinstall": "npm run build && jspm install",
-    "watch": "rm -rf build && mkdir build && tsc -w",
-    "start": "node build/example/server.js"
+    "watch": "rm -rf build && mkdir build && tsc -p ./src -w",
+    "start": "node build/server.js"
   },
   "author": "jhades.dev@gmail.com",
   "url": "https://github.com/jhades/angular2-redux-store",

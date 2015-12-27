@@ -5,7 +5,7 @@
   "homepage": "https://github.com/jhades/angular2-redux-store",
   "main": "lib/index.js",
   "scripts": {
-    "build": "rm -rf lib && mkdir lib && tsc"
+    "build": "rm -rf lib && mkdir lib && tsc -p src"
   },
   "author": "jhades.dev@gmail.com",
   "url": "https://github.com/jhades/angular2-redux-store",

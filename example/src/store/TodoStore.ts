@@ -4,7 +4,7 @@ import {createStore, applyMiddleware} from 'redux';
 import {todoApp, initialUiState} from './todoReducers';
 import {List} from 'immutable';
 import createLogger from 'redux-logger';
-import {ReduxStore} from "./../../src/ReduxStore";
+import {ReduxStore} from "angular2-redux-store";
 
 const logger = createLogger({
     stateTransformer: (state) => {

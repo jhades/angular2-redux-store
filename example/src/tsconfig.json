@@ -1,5 +1,4 @@
 {
-  "version": "1.6.2",
   "compilerOptions": {
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
@@ -8,11 +7,6 @@
     "moduleResolution": "node",
     "removeComments": true,
     "sourceMap": true,
-    "outDir": "lib"
-  },
-  "exclude": [
-    "node_modules",
-    "lib",
-    "example"
-  ]
+    "outDir": "../build"
+  }
 }

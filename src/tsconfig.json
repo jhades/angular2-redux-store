@@ -1,18 +1,12 @@
 {
-  "version": "1.6.2",
   "compilerOptions": {
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
     "target": "es5",
-    "module": "system",
+    "module": "commonjs",
     "moduleResolution": "node",
     "removeComments": true,
     "sourceMap": true,
-    "outDir": "build"
-  },
-  "exclude": [
-    "node_modules",
-    "jspm_packages",
-    "build"
-  ]
+    "outDir": "../lib"
+  }
 }
