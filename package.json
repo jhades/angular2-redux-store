@@ -1,14 +1,11 @@
 {
   "name": "angular2-redux-store",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "description": "A minimalistic Redux store for Angular 2",
   "homepage": "https://github.com/jhades/angular2-redux-store",
-  "main": "index.js",
+  "main": "lib/index.js",
   "scripts": {
-    "build": "rm -rf build && mkdir build && tsc || true",
-    "postinstall": "npm run build && jspm install",
-    "watch": "rm -rf build && mkdir build && tsc -w",
-    "start": "node build/example/server.js"
+    "build": "rm -rf lib && mkdir lib && tsc"
   },
   "author": "jhades.dev@gmail.com",
   "url": "https://github.com/jhades/angular2-redux-store",
@@ -18,27 +15,8 @@
     "url": "https://github.com/jhades/angular2-redux-store.git"
   },
   "dependencies": {
-    "angular2": "2.0.0-alpha.48"
   },
   "devDependencies": {
-    "body-parser": "^1.14.1",
-    "express": "^4.13.3",
-    "jspm": "^0.16.14",
-    "lodash": "^3.10.1",
     "typescript": "^1.7.3"
-  },
-  "jspm": {
-    "dependencies": {
-      "immutable": "npm:immutable@^3.7.5",
-      "redux": "npm:redux@^3.0.4",
-      "redux-logger": "npm:redux-logger@^2.1.4"
-    },
-    "devDependencies": {
-      "babel": "npm:babel-core@^5.8.24",
-      "babel-runtime": "npm:babel-runtime@^5.8.24",
-      "core-js": "npm:core-js@^1.1.4",
-      "immutable": "npm:immutable@^3.7.5",
-      "reflect-metadata": "npm:reflect-metadata@^0.1.2"
-    }
   }
 }

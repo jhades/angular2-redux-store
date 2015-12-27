@@ -8,11 +8,11 @@
     "moduleResolution": "node",
     "removeComments": true,
     "sourceMap": true,
-    "outDir": "lib"
+    "outDir": "build"
   },
   "exclude": [
     "node_modules",
-    "lib",
-    "example"
+    "jspm_packages",
+    "build"
   ]
 }
