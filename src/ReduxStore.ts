@@ -35,7 +35,7 @@ export abstract class ReduxStore {
     }
 
     subscribe(listener: Function) {
-        this.store.subscribe(() => listener(this.getState()));
+        return this.store.subscribe(() => listener(this.getState()));
     }
 
 }

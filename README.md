@@ -74,9 +74,12 @@ let currentState = todoStore.getState();
 todoStore.dispatch(action); 
 
 // adds a state change listener
-todoStore.subscribe(
+let unsubscribe = todoStore.subscribe(
    state => console.log('Received new store state: ' + state);
 );
+
+// when the subscription is not needed anymore
+unsubscribe();
 ```
 
 ### Using the Angular 2 Redux Store
