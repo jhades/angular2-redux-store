@@ -31,7 +31,7 @@ export abstract class ReduxStore {
     }
 
     dispatch(action) {
-        this.store.dispatch(action);
+        return this.store.dispatch(action);
     }
 
     subscribe(listener: Function) {
