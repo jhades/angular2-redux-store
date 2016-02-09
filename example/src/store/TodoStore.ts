@@ -1,5 +1,5 @@
 
-import {Injectable} from 'angular2/angular2';
+import {Injectable} from 'angular2/core';
 import {createStore, applyMiddleware} from 'redux';
 import {todoApp, initialUiState} from './todoReducers';
 import {List} from 'immutable';

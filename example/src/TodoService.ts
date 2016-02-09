@@ -1,9 +1,9 @@
 
-import {Injectable,Inject} from 'angular2/angular2';
+import {Injectable,Inject} from 'angular2/core';
 import  {Http,Headers,URLSearchParams} from 'angular2/http';
 import {Todo} from "./Todo";
 import {List} from 'immutable';
-import {Observable} from "angular2/angular2";
+import {Observable} from "rxjs/Observable";
 
 @Injectable()
 export class TodoService {

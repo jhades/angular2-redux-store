@@ -18,7 +18,8 @@
     "url": "https://github.com/jhades/angular2-redux-store.git"
   },
   "dependencies": {
-    "angular2": "2.0.0-alpha.48"
+    "angular2": "2.0.0-beta.3",
+    "rxjs": "^5.0.0-beta.1"
   },
   "devDependencies": {
     "body-parser": "^1.14.1",
@@ -29,7 +30,7 @@
   },
   "jspm": {
     "dependencies": {
-      "angular2-redux-store": "npm:angular2-redux-store@^1.0.7",
+      "angular2-redux-store": "npm:angular2-redux-store@^1.2.0",
       "immutable": "npm:immutable@^3.7.5",
       "redux": "npm:redux@^3.0.4",
       "redux-logger": "npm:redux-logger@^2.1.4"
@@ -38,7 +39,6 @@
       "babel": "npm:babel-core@^5.8.24",
       "babel-runtime": "npm:babel-runtime@^5.8.24",
       "core-js": "npm:core-js@^1.1.4",
-      "immutable": "npm:immutable@^3.7.5",
       "reflect-metadata": "npm:reflect-metadata@^0.1.2"
     }
   }

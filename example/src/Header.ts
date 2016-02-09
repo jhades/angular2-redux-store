@@ -1,13 +1,12 @@
-import {Component, FORM_DIRECTIVES, Output,EventEmitter} from 'angular2/angular2';
+import {Component, Output,EventEmitter} from 'angular2/core';
 
 
 @Component({
     selector:'todo-header',
-    directives: [FORM_DIRECTIVES],
     template: `
         <header id="header">
             <h1>todos</h1>
-            <form id="todo-form" (ng-submit)="addTodo(input)" autocomplete="off">
+            <form id="todo-form" (ngSubmit)="addTodo(input)" autocomplete="off">
                 <input id="new-todo" placeholder="What needs to be done?" #input>
             </form>
         </header>

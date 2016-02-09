@@ -1,4 +1,4 @@
-import {Component,Input, NgFor, NgClass,Output, EventEmitter,ChangeDetectionStrategy} from 'angular2/angular2';
+import {Component,Input,Output, EventEmitter,ChangeDetectionStrategy} from 'angular2/core';
 import {Todo} from "./Todo";
 import {List} from 'immutable';
 import {TodoService} from "./TodoService";
@@ -8,14 +8,13 @@ import {toggleTodo, deleteTodo} from './store/todoActions';
 
 @Component({
     selector: 'todo-list',
-    directives: [NgFor, NgClass],
     changeDetection: ChangeDetectionStrategy.OnPush,
     template: `
 
         <section id="main" [hidden]="todos.size === 0">
             <label for="toggle-all">Mark all as complete</label>
             <ul id="todo-list">
-                <li *ng-for="#todo of todos;" [ng-class]="{completed: todo.completed}">
+                <li *ngFor="#todo of todos;" [ngClass]="{completed: todo.completed}">
                     <div class="view">
                         <input class="toggle" type="checkbox" (change)="onToggleTodo(todo)" [checked]="todo.completed">
                         <label>{{todo.description}}</label>
