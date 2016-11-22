@@ -1,7 +1,7 @@
 
 WARNING: this repo is deprecated. If looking to integrate Angular 2 and Redux, have a look at [ng2-redux](https://github.com/angular-redux/ng2-redux). 
 
-The most important question about this type of architecture is probably when should we use it and why? Have a look at this blog post that goes over that - [Angular 2 Service Layers: Redux, RxJs and Ngrx Store - When to Use a Store And Why ?](http://blog.angular-university.io/angular-2-redux-ngrx-rxjs/)
+Probably the most important question about this type of architecture is when should we use it and why? Have a look at this blog post that goes over that - [Angular 2 Service Layers: Redux, RxJs and Ngrx Store - When to Use a Store And Why ?](http://blog.angular-university.io/angular-2-redux-ngrx-rxjs/)
 
 
 # Angular 2 Redux Store
