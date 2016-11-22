@@ -1,13 +1,18 @@
 
-# Angular 2 Redux Store
+WARNING: this repo is deprecated. It was just a very early experiment on how to structure a data layer in Angular. 
 
-[![npm version](https://img.shields.io/npm/v/angular2-redux-store.svg?style=flat-square)](https://www.npmjs.com/package/angular2-redux-store)
+The most important question about this type of architecture is probably when should we use it and why? Have a look at this blog post goes over that - [Angular 2 Service Layers: Redux, RxJs and Ngrx Store - When to Use a Store And Why ?](http://blog.angular-university.io/angular-2-redux-ngrx-rxjs/)
+
+
+# Angular 2 Redux Store
 
 A minimalistic Redux Store for building Angular 2 apps using the Flux architecture.
 
 Check this post for a more detailed explanation:
 
 [Angular 2 Application Architecture -Building Flux Apps with Redux and Immutable.js](http://blog.jhades.org/angular-2-application-architecture-building-flux-like-apps-using-redux-and-immutable-js-js/)
+
+[![npm version](https://img.shields.io/npm/v/angular2-redux-store.svg?style=flat-square)](https://www.npmjs.com/package/angular2-redux-store)
 
 ### The Gist
 
