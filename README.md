@@ -1,5 +1,5 @@
 
-WARNING: this repo is Deprecated. If looking to integrate Angular 2 and Redux, have a look at [ng2-redux](https://github.com/angular-redux/ng2-redux). 
+WARNING: this repo is deprecated. If looking to integrate Angular 2 and Redux, have a look at [ng2-redux](https://github.com/angular-redux/ng2-redux). 
 
 # Angular 2 Redux Store
 
