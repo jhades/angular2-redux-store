@@ -102,9 +102,9 @@ Then install angular2-redux-store like this:
      jspm install npm:angular2-redux-store
 
 ### Redux,  Immutability and Type Safety
-Altough redux does not enforce any immutability library, its important to use one so that we have the strong guarantee that the state that comes out of the store cannot be tampered with in any way by the component tree. 
+Altough redux does not enforce any immutability library, it's important to use one so that we have the strong guarantee that the state that comes out of the store cannot be tampered with in any way by the component tree. 
 
-To achieve this, have a look at immutable.js. With it its possible to define classes that are immutable and still keep the benefits of type-safety in a Typescript environment. For example, this is how an immutable Todo class can be defined:
+To achieve this, have a look at immutable.js. With it, it's possible to define classes that are immutable and still keep the benefits of type-safety in a Typescript environment. For example, this is how an immutable Todo class can be defined:
 
 ```js
 import {Record} from 'immutable';
@@ -128,7 +128,7 @@ export class Todo extends TodoRecord {
 ```
 This is based on the immutable.js [Record](https://facebook.github.io/immutable-js/docs/#/Record), which allows to create an immutable object with an allowed set of keys. 
 
-The Todo class is both immuttable and type-safe, meaning its possible to autocomplete its properties and have it's usage type-checked by the Typescript compiler.
+The Todo class is both immuttable and type-safe, meaning it's possible to autocomplete its properties and have its usage type-checked by the Typescript compiler.
 
 ### Running the sample app
 
